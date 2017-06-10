@@ -23,6 +23,10 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"/>
            <!-- android:theme="@style/ThemeOverlay.AppCompat.ActionBar"-->
 
+        <ImageView
+            android:id="@+id/slideshow_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
         <ListView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

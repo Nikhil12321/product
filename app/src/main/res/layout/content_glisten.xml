@@ -18,24 +18,171 @@
         android:id="@+id/card_view"
         android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        card_view:cardCornerRadius="4dp">
+        android:layout_height="150dp"
+        card_view:cardCornerRadius="4dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="100dp"
+            <ImageButton
+                android:scaleType="centerCrop"
+                android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:padding="5dp"
-                android:src="@drawable/girish"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="40dp"
-                android:text="Hey there watsup, long text"/>
+                android:src="@drawable/glisten_3720"/>
+            <TableLayout
+                android:paddingTop="10dp"
+                android:paddingLeft="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Code"
+                        android:layout_column="1"
+                        />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:paddingLeft="20dp"
+                        android:text="G-3703"
+                        android:layout_column="2"
+                        />
+                </TableRow>
+                <TableRow
+                    android:padding="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <View
+
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/prod_horz_divider_height"
+                        android:layout_weight="1"
+                        android:background="#FF909090"
+                         />
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Description"
+                        android:layout_column="1"
+                        />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:paddingLeft="20dp"
+                        android:text="6A. Bell Push Switch"
+                        android:layout_column="2"
+                        />
+                </TableRow>
+                <TableRow
+                    android:padding="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <View
+
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/prod_horz_divider_height"
+                        android:layout_weight="1"
+                        android:background="#FF909090"
+                        />
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textStyle="bold"
+                        android:text="Modules"
+                        android:layout_column="1"
+                        />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:paddingLeft="20dp"
+                        android:text="One"
+                        android:layout_column="2"
+                        />
+                </TableRow>
+                <TableRow
+                    android:padding="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <View
+
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/prod_horz_divider_height"
+                        android:layout_weight="1"
+                        android:background="#FF909090"
+                        />
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textStyle="bold"
+                        android:text="PKG (Per Box)"
+                        android:layout_column="1"
+                        />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:paddingLeft="20dp"
+                        android:text="10"
+                        android:layout_column="2"
+                        />
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp">
+
+                    <View
+
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/prod_horz_divider_height"
+                        android:layout_weight="1"
+                        android:background="#FF909090"
+                        />
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:textStyle="bold"
+                        android:text="MRP (Per Pc.)"
+                        android:layout_column="1"
+                        />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:paddingLeft="20dp"
+                        android:text="Rs.58.00"
+                        android:layout_column="2"
+                        />
+                </TableRow>
+            </TableLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 

@@ -1,10 +1,13 @@
 package com.example.nikhil.product;
 
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ListViewCompat;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -23,12 +26,18 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class main_page extends AppCompatActivity {
 
     TextView primary_text_view;
     ListView primary_list_view;
     Drawer result;
+    ImageView slideshow_image_View;
+    Timer repeatTask;
+    int repeatInterval = 3000;
+    int i = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +46,22 @@ public class main_page extends AppCompatActivity {
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_main_page);
         setSupportActionBar(toolbar);
 
+        slideshow_image_View = (ImageView)findViewById(R.id.slideshow_image_view);
+        repeatTask = new Timer();
         primary_list_view = (ListView)findViewById(R.id.main_page_list_view);
         setUpNavigationBar(toolbar);
+        final int[] slideshow_pictures = {R.drawable.slide1, R.drawable.slide2, R.drawable.slide3};
 
+
+        repeatTask.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                slideshow_image_View.setImageResource(slideshow_pictures[i]);
+                i = (i+1)%3;
+            }
+        }, 0, repeatInterval);
     }
+
 
     void modular(Toolbar toolbar){
 
