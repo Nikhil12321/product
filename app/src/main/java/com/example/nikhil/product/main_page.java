@@ -1,5 +1,6 @@
 package com.example.nikhil.product;
 
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
@@ -36,9 +38,8 @@ public class main_page extends AppCompatActivity {
     Drawer result;
     ImageView slideshow_image_View;
     Timer repeatTask;
-    int repeatInterval = 3000;
+    int repeatInterval = 5000;
     int i = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,13 +54,46 @@ public class main_page extends AppCompatActivity {
         final int[] slideshow_pictures = {R.drawable.slide1, R.drawable.slide2, R.drawable.slide3};
 
 
-        repeatTask.scheduleAtFixedRate(new TimerTask() {
+        /*repeatTask.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                 slideshow_image_View.setImageResource(slideshow_pictures[i]);
                 i = (i+1)%3;
             }
-        }, 0, repeatInterval);
+        }, 0, repeatInterval);*/
+
+        startSlideshow(slideshow_pictures);
+    }
+
+    Context getActivity(){
+
+        return this;
+    }
+
+    void startSlideshow(final int[] slideshow_pictures){
+
+        Thread th = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            slideshow_image_View.setImageResource(slideshow_pictures[i]);
+                            i = (i + 1) % 3;
+
+                        }
+                    });
+                    try {
+                        Thread.sleep(repeatInterval);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        th.start();
+
     }
 
 
