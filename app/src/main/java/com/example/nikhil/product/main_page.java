@@ -1,6 +1,7 @@
 package com.example.nikhil.product;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
@@ -26,6 +27,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 import org.w3c.dom.Text;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -40,12 +42,27 @@ public class main_page extends AppCompatActivity {
     Timer repeatTask;
     int repeatInterval = 5000;
     int i = 0;
+    DbHelper dbHelper;
+    SharedPreferences sharedPreferences;
+    String pref_name = "preferences";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_main_page);
         setSupportActionBar(toolbar);
+        sharedPreferences = getApplicationContext().getSharedPreferences(pref_name, 0);
+        dbHelper = new DbHelper(this);
+
+        boolean is_initialized = sharedPreferences.getBoolean("is_initialized", false);
+        if(!is_initialized) {
+            dbHelper.initDatabase();
+
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("is_initialized", true);
+        }
 
         slideshow_image_View = (ImageView)findViewById(R.id.slideshow_image_view);
         repeatTask = new Timer();
@@ -53,14 +70,6 @@ public class main_page extends AppCompatActivity {
         setUpNavigationBar(toolbar);
         final int[] slideshow_pictures = {R.drawable.slide1, R.drawable.slide2, R.drawable.slide3};
 
-
-        /*repeatTask.scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                slideshow_image_View.setImageResource(slideshow_pictures[i]);
-                i = (i+1)%3;
-            }
-        }, 0, repeatInterval);*/
 
         startSlideshow(slideshow_pictures);
     }
@@ -157,6 +166,7 @@ public class main_page extends AppCompatActivity {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         // do something with the clicked item :D
+                        slideshow_image_View.setVisibility(View.GONE);
 
                         switch(position){
 

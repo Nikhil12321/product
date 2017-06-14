@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_glisten_scrollview"
-    android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.nikhil.product.Glisten"
-    tools:showIn="@layout/activity_glisten"
+    android:id="@+id/glisten_product_view"
     >
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/glisten_list_view"
-        ></ListView>
-
-    <!--<android.support.v7.widget.CardView
+    <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/card_view"
         android:layout_gravity="center"
@@ -40,7 +25,8 @@
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:padding="5dp"
-                android:src="@drawable/glisten_3720"/>
+                android:src="@drawable/glisten_3720"
+                android:id="@+id/glisten_image_button"/>
             <TableLayout
                 android:paddingTop="10dp"
                 android:paddingLeft="5dp"
@@ -56,6 +42,7 @@
                         android:textStyle="bold"
                         android:text="Code"
                         android:layout_column="1"
+                        android:id="@+id/glisten_w_code"
                         />
                     <TextView
                         android:layout_height="wrap_content"
@@ -63,6 +50,7 @@
                         android:paddingLeft="20dp"
                         android:text="G-3703"
                         android:layout_column="2"
+                        android:id="@+id/glisten_code"
                         />
                 </TableRow>
                 <TableRow
@@ -76,7 +64,7 @@
                         android:layout_height="@dimen/prod_horz_divider_height"
                         android:layout_weight="1"
                         android:background="#FF909090"
-                         />
+                        />
                 </TableRow>
                 <TableRow
                     android:layout_width="match_parent"
@@ -87,6 +75,7 @@
                         android:textStyle="bold"
                         android:text="Description"
                         android:layout_column="1"
+                        android:id="@+id/glisten_w_description"
                         />
                     <TextView
                         android:layout_height="wrap_content"
@@ -94,6 +83,7 @@
                         android:paddingLeft="20dp"
                         android:text="6A. Bell Push Switch"
                         android:layout_column="2"
+                        android:id="@+id/glisten_description"
                         />
                 </TableRow>
                 <TableRow
@@ -118,6 +108,7 @@
                         android:textStyle="bold"
                         android:text="Modules"
                         android:layout_column="1"
+                        android:id="@+id/glisten_w_modules"
                         />
                     <TextView
                         android:layout_height="wrap_content"
@@ -125,6 +116,7 @@
                         android:paddingLeft="20dp"
                         android:text="One"
                         android:layout_column="2"
+                        android:id="@+id/glisten_modules"
                         />
                 </TableRow>
                 <TableRow
@@ -149,6 +141,7 @@
                         android:textStyle="bold"
                         android:text="PKG (Per Box)"
                         android:layout_column="1"
+                        android:id="@+id/glisten_w_pkg"
                         />
                     <TextView
                         android:layout_height="wrap_content"
@@ -156,6 +149,7 @@
                         android:paddingLeft="20dp"
                         android:text="10"
                         android:layout_column="2"
+                        android:id="@+id/glisten_pkg"
                         />
                 </TableRow>
                 <TableRow
@@ -180,6 +174,7 @@
                         android:textStyle="bold"
                         android:text="MRP (Per Pc.)"
                         android:layout_column="1"
+                        android:id="@+id/glisten_w_mrp"
                         />
                     <TextView
                         android:layout_height="wrap_content"
@@ -187,12 +182,11 @@
                         android:paddingLeft="20dp"
                         android:text="Rs.58.00"
                         android:layout_column="2"
+                        android:id="@+id/glisten_mrp"
                         />
                 </TableRow>
             </TableLayout>
         </LinearLayout>
-    </android.support.v7.widget.CardView>-->
+    </android.support.v7.widget.CardView>
 
-
-
-</ScrollView>
+</LinearLayout>
