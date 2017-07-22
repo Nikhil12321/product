@@ -1,6 +1,7 @@
 package com.example.nikhil.product;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
@@ -8,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.ListViewCompat;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -56,12 +58,14 @@ public class main_page extends AppCompatActivity {
         sharedPreferences = getApplicationContext().getSharedPreferences(pref_name, 0);
         dbHelper = new DbHelper(this);
 
-        boolean is_initialized = sharedPreferences.getBoolean("is_initialized", false);
-        if(!is_initialized) {
+        int is_initialized = sharedPreferences.getInt("is_initialized", 0);
+        if(is_initialized == 0) {
             dbHelper.initDatabase();
 
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putBoolean("is_initialized", true);
+            editor.putInt("is_initialized", 1);
+            editor.apply();
+            editor.commit();
         }
 
         slideshow_image_View = (ImageView)findViewById(R.id.slideshow_image_view);
@@ -69,7 +73,6 @@ public class main_page extends AppCompatActivity {
         primary_list_view = (ListView)findViewById(R.id.main_page_list_view);
         setUpNavigationBar(toolbar);
         final int[] slideshow_pictures = {R.drawable.slide1, R.drawable.slide2, R.drawable.slide3};
-
 
         startSlideshow(slideshow_pictures);
     }
@@ -166,6 +169,8 @@ public class main_page extends AppCompatActivity {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         // do something with the clicked item :D
+
+
                         slideshow_image_View.setVisibility(View.GONE);
 
                         switch(position){

@@ -13,11 +13,12 @@ db.execSQL("create table "+GLISTEN_TABLE+" (code text, description text, modules
 
 public class Glisten_product{
 
-    String code;
-    String description;
-    int modules;
-    int pkg;
-    int mrp;
+
+    public String code;
+    public String description;
+    public int modules;
+    public int pkg;
+    public int mrp;
 
 
     public Glisten_product(String code_r, String description_r, int modules_r, int pkg_r, int mrp_r){

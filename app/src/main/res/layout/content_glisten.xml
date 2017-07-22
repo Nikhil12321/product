@@ -14,11 +14,7 @@
     tools:showIn="@layout/activity_glisten"
     >
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/glisten_list_view"
-        ></ListView>
+
 
     <!--<android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"

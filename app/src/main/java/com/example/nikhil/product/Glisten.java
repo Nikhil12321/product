@@ -25,17 +25,16 @@ public class Glisten extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_glisten);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);*/
         listView = (ListView)findViewById(R.id.glisten_list_view);
         dbHelper = new DbHelper(this);
         ArrayList<Glisten_product> product_list = dbHelper.getAllGlistenProducts();
 
         for(int i=0; i<product_list.size(); i++)
-            Log.e("values", product_list.get(i).code.toString());
+            Log.e("values", product_list.get(i).code);
 
-        adapter = new Glisten_adapter(this, product_list);
+        adapter = new Glisten_adapter(this, R.layout.glisten_layout_vertical, product_list);
         listView.setAdapter(adapter);
     }
 

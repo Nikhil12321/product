@@ -99,6 +99,11 @@ public class DbHelper extends SQLiteOpenHelper {
         insertIntoGlisten("G 3720", "6A. Bell Push Switch", 1, 10, 46);
         insertIntoGlisten("G 3702", "6A. Two Way Switch", 1, 10, 62);
         insertIntoGlisten("G 3703", "6A. Two Way Switch", 1, 10, 58);
+        insertIntoGlisten("G 3704", "6A. Two Way Switch", 1, 10, 58);
+        insertIntoGlisten("G 3705", "6A. Two Way Switch", 1, 10, 58);
+        insertIntoGlisten("G 3706", "6A. Two Way Switch", 1, 10, 58);
+        insertIntoGlisten("G 3707", "6A. Two Way Switch", 1, 10, 58);
+        insertIntoGlisten("G 3708", "6A. Two Way Switch", 1, 10, 58);
 
     }
 

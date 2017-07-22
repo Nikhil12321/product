@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Product</string>
     <string name="title_activity_glisten">Glisten</string>
+    <string name="title_activity_product_choice">Product_choice</string>
 </resources>

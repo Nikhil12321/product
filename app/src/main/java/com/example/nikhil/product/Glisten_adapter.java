@@ -4,128 +4,95 @@ package com.example.nikhil.product;
 import android.app.Activity;
 import android.content.Context;
 import android.media.Image;
+import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by nikhil on 14/6/17.
  */
 
-public class Glisten_adapter extends BaseAdapter implements View.OnClickListener{
-
-    ArrayList<Glisten_product> data;
-    Context activity;
-    Glisten_product values;
-    LayoutInflater layoutInflater=null;
-
-
-    public Glisten_adapter(Context a, ArrayList<Glisten_product> arrayList){
-
-        activity = a;
-        this.data = arrayList;
-
-        layoutInflater = (LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-
+public class Glisten_adapter extends ArrayAdapter<Glisten_product>{
+    public Glisten_adapter(@NonNull Context context, @LayoutRes int resource) {
+        super(context, resource);
+    }
+    public Glisten_adapter(Context context, int resource, List<Glisten_product> items){
+        super(context, resource, items);
     }
 
-    @Override
-    public int getCount() {
-        return 0;
-    }
+    public View getView(int position, View convertView, ViewGroup parent){
 
-    @Override
-    public Object getItem(int position) {
-        return null;
-    }
+        View v = convertView;
+        if(v == null){
 
-    @Override
-    public long getItemId(int position) {
-        return 0;
-    }
+            LayoutInflater vi;
+            vi = LayoutInflater.from(getContext());
+            v = vi.inflate(R.layout.glisten_layout_vertical, null);
 
-    @Override
-    public void onClick(View v) {
-
-    }
-
-    public static class ViewHolder{
-
-        ImageButton product_image_button;
-
-        TextView code;
-
-        TextView description;
-
-        TextView module;
-
-        TextView pkg;
-
-        TextView mrp;
-
-    }
-
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-
-        View vi = convertView;
-        ViewHolder viewHolder;
-
-        if(convertView == null){
-
-            vi = layoutInflater.inflate(R.layout.glisten_product, null);
-            viewHolder = new ViewHolder();
-            viewHolder.product_image_button = (ImageButton)vi.findViewById(R.id.glisten_image_button);
-
-            viewHolder.code = (TextView)vi.findViewById(R.id.glisten_code);
-
-            viewHolder.description = (TextView)vi.findViewById(R.id.glisten_description);
-
-            viewHolder.module = (TextView)vi.findViewById(R.id.glisten_modules);
-
-            viewHolder.pkg = (TextView)vi.findViewById(R.id.glisten_pkg);
-
-            viewHolder.mrp = (TextView)vi.findViewById(R.id.glisten_mrp);
-        }
-        viewHolder = (ViewHolder)vi.getTag();
-
-        values = (Glisten_product)data.get(position);
-        int resId = activity.getResources().getIdentifier("com.example.nikhil.product:drawable/glisten_"+viewHolder.code.toString(), null, null);
-        viewHolder.product_image_button.setImageResource(resId);
-        viewHolder.code.setText(values.code);
-        viewHolder.description.setText(values.description);
-        viewHolder.module.setText(values.modules);
-        viewHolder.pkg.setText(values.pkg);
-        viewHolder.mrp.setText(values.mrp);
-
-        vi.setOnClickListener(new OnItemClickListener(position));
-        return vi;
-
-    }
-
-    private class OnItemClickListener  implements View.OnClickListener {
-        private int mPosition;
-
-        OnItemClickListener(int position){
-            mPosition = position;
         }
 
-        @Override
-        public void onClick(View arg0) {
+        Glisten_product p = getItem(position);
+        if(p != null){
 
+            /*****Uncomment for horizaontal*********
+            ImageButton glisten_image_button = (ImageButton)v.findViewById(R.id.glisten_image_button);
+            TextView code_tv = (TextView)v.findViewById(R.id.glisten_code);
+            TextView description_tv = (TextView)v.findViewById(R.id.glisten_description);
+            TextView modules_tv = (TextView)v.findViewById(R.id.glisten_modules);
+            TextView pkg_tv = (TextView)v.findViewById(R.id.glisten_pkg);
+            TextView mrp_tv = (TextView)v.findViewById(R.id.glisten_mrp);
+            if(code_tv != null)
+                code_tv.setText(p.code);
+            if(description_tv != null)
+                description_tv.setText(p.description);
+            /*if(modules_tv != null)
+                modules_tv.setText("Asdasd");*/
+            /*if(pkg_tv != null)
+                pkg_tv.setText(p.pkg);
+            if(mrp_tv != null)
+                mrp_tv.setText(p.mrp);*/
 
-            /*CustomListViewAndroidExample sct = (CustomListViewAndroidExample)activity;
+            /*******************************************/
 
-            *//****  Call  onItemClick Method inside CustomListViewAndroidExample Class ( See Below )****//*
+            ImageButton glisten_image_button = (ImageButton)v.findViewById(R.id.glisten_image_button_vertical);
+            TextView code_tv = (TextView)v.findViewById(R.id.glisten_code_vertical);
+            TextView description_tv = (TextView)v.findViewById(R.id.glisten_description_vertical);
+            TextView modules_tv = (TextView)v.findViewById(R.id.glisten_modules_vertical);
+            TextView pkg_tv = (TextView)v.findViewById(R.id.glisten_pkg_vertical);
+            TextView mrp_tv = (TextView)v.findViewById(R.id.glisten_mrp_vertical);
+            if(code_tv != null)
+                code_tv.setText(p.code);
+            if(description_tv != null)
+                description_tv.setText(p.description);
+            /*if(modules_tv != null)
+                modules_tv.setText("Asdasd");*/
+            /*if(pkg_tv != null)
+                pkg_tv.setText(p.pkg);
+            if(mrp_tv != null)
+                mrp_tv.setText(p.mrp);*/
 
-            sct.onItemClick(mPosition);*/
+            /****** HARDCODED *****/
+            if(p.code.contains("3720"))
+                glisten_image_button.setImageResource(R.drawable.glisten_3720);
+            if(p.code.contains("3702"))
+                glisten_image_button.setImageResource(R.drawable.glisten_3702);
+            else
+                glisten_image_button.setImageResource(R.drawable.glisten_3703);
+            /**********************/
+
         }
+        return v;
     }
 }

@@ -18,6 +18,10 @@
         <activity
             android:name=".Glisten"
             android:label="@string/title_activity_glisten"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Product_choice"
+            android:label="@string/title_activity_product_choice"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
