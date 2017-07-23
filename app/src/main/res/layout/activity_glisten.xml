@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.example.nikhil.product.Glisten"
-    android:background="#B3E5FC">
+    android:background="#B3E5FC"
+    android:id="@+id/container">
 
     <!--<android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -32,6 +33,13 @@
         android:fastScrollEnabled="true"
         android:fastScrollAlwaysVisible="false"
         ></ListView>
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/expanded_image"
+        android:visibility="invisible"/>
 
 
 

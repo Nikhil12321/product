@@ -86,14 +86,6 @@ public class Glisten_adapter extends ArrayAdapter<Glisten_product>{
             if(mrp_tv != null)
                 mrp_tv.setText(Integer.toString( p.mrp) );
 
-            /****** HARDCODED *****
-            if(p.code.contains("3720"))
-                glisten_image_button.setImageResource(R.drawable.glisten_3720);
-            if(p.code.contains("3702"))
-                glisten_image_button.setImageResource(R.drawable.glisten_3702);
-            else
-                glisten_image_button.setImageResource(R.drawable.glisten_3703);
-            /**********************/
 
         }
         return v;
