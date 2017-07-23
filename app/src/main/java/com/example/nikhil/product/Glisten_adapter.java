@@ -72,18 +72,21 @@ public class Glisten_adapter extends ArrayAdapter<Glisten_product>{
             TextView modules_tv = (TextView)v.findViewById(R.id.glisten_modules_vertical);
             TextView pkg_tv = (TextView)v.findViewById(R.id.glisten_pkg_vertical);
             TextView mrp_tv = (TextView)v.findViewById(R.id.glisten_mrp_vertical);
+
+            if(glisten_image_button != null)
+                glisten_image_button.setImageResource(p.image);
             if(code_tv != null)
                 code_tv.setText(p.code);
             if(description_tv != null)
                 description_tv.setText(p.description);
-            /*if(modules_tv != null)
-                modules_tv.setText("Asdasd");*/
-            /*if(pkg_tv != null)
-                pkg_tv.setText(p.pkg);
+            if(modules_tv != null)
+                modules_tv.setText(Integer.toString( p.modules) );
+            if(pkg_tv != null)
+                pkg_tv.setText(Integer.toString( p.pkg) );
             if(mrp_tv != null)
-                mrp_tv.setText(p.mrp);*/
+                mrp_tv.setText(Integer.toString( p.mrp) );
 
-            /****** HARDCODED *****/
+            /****** HARDCODED *****
             if(p.code.contains("3720"))
                 glisten_image_button.setImageResource(R.drawable.glisten_3720);
             if(p.code.contains("3702"))

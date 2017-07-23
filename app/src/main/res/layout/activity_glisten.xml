@@ -29,6 +29,8 @@
         android:id="@+id/glisten_list_view"
         android:dividerHeight="15dp"
         android:padding="@dimen/activity_horizontal_margin"
+        android:fastScrollEnabled="true"
+        android:fastScrollAlwaysVisible="false"
         ></ListView>
 
 

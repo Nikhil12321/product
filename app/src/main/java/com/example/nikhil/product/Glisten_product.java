@@ -19,15 +19,18 @@ public class Glisten_product{
     public int modules;
     public int pkg;
     public int mrp;
+    public int image;
 
 
-    public Glisten_product(String code_r, String description_r, int modules_r, int pkg_r, int mrp_r){
+    public Glisten_product(String code_r, String description_r, int modules_r, int pkg_r, int mrp_r, int image_r){
 
         code = code_r;
         description = description_r;
         modules = modules_r;
         pkg = pkg_r;
         mrp = mrp_r;
+        image = image_r;
+
     }
 }
 

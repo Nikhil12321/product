@@ -55,6 +55,7 @@ public class main_page extends AppCompatActivity {
         setContentView(R.layout.activity_main_page);
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_main_page);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Girish Product Catalog");
         sharedPreferences = getApplicationContext().getSharedPreferences(pref_name, 0);
         dbHelper = new DbHelper(this);
 
@@ -170,8 +171,9 @@ public class main_page extends AppCompatActivity {
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         // do something with the clicked item :D
 
-
-                        slideshow_image_View.setVisibility(View.GONE);
+                        Intent intent = new Intent(getActivity(), Product_choice.class);
+                        startActivity(intent);
+                        //slideshow_image_View.setVisibility(View.GONE);
 
                         switch(position){
 

@@ -29,9 +29,9 @@ public class DbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL("create table "+GLISTEN_TABLE+" (code text, description text, modules integer, pkg integer, mrp integer);");
-        db.execSQL("create table "+GLAM_TABLE+" (code text, description text, modules integer, pkg integer, mrp integer);");
-        db.execSQL("create table "+VOX_TABLE+" (code text, description text, modules integer, pkg integer, mrp integer);");
+        db.execSQL("create table "+GLISTEN_TABLE+" (code text, description text, modules integer, pkg integer, mrp integer, image integer);");
+        db.execSQL("create table "+GLAM_TABLE+" (code text, description text, modules integer, pkg integer, mrp integer, image integer);");
+        db.execSQL("create table "+VOX_TABLE+" (code text, description text, modules integer, pkg integer, mrp integer, image integer);");
 
     }
 
@@ -39,7 +39,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
 
-    public boolean insertIntoGlisten(String code, String description, int modules, int pkg, int mrp){
+    public boolean insertIntoGlisten(String code, String description, int modules, int pkg, int mrp, int image){
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -48,6 +48,7 @@ public class DbHelper extends SQLiteOpenHelper {
         contentValues.put("modules", modules);
         contentValues.put("pkg", pkg);
         contentValues.put("mrp", mrp);
+        contentValues.put("image", image);
         try {
             Log.e("inside catch", "inserted values");
             db.insert(GLISTEN_TABLE, null, contentValues);
@@ -85,8 +86,9 @@ public class DbHelper extends SQLiteOpenHelper {
             int modules = res.getInt(res.getColumnIndex("modules"));
             int pkg = res.getInt(res.getColumnIndex("pkg"));
             int mrp = res.getInt(res.getColumnIndex("mrp"));
+            int image = res.getInt(res.getColumnIndex("image"));
 
-            Glisten_product product = new Glisten_product(code, description, modules, pkg, mrp);
+            Glisten_product product = new Glisten_product(code, description, modules, pkg, mrp, image);
 
             array_list.add(product);
             res.moveToNext();
@@ -96,14 +98,14 @@ public class DbHelper extends SQLiteOpenHelper {
 
     public void initDatabase(){
 
-        insertIntoGlisten("G 3720", "6A. Bell Push Switch", 1, 10, 46);
-        insertIntoGlisten("G 3702", "6A. Two Way Switch", 1, 10, 62);
-        insertIntoGlisten("G 3703", "6A. Two Way Switch", 1, 10, 58);
-        insertIntoGlisten("G 3704", "6A. Two Way Switch", 1, 10, 58);
-        insertIntoGlisten("G 3705", "6A. Two Way Switch", 1, 10, 58);
-        insertIntoGlisten("G 3706", "6A. Two Way Switch", 1, 10, 58);
-        insertIntoGlisten("G 3707", "6A. Two Way Switch", 1, 10, 58);
-        insertIntoGlisten("G 3708", "6A. Two Way Switch", 1, 10, 58);
+        insertIntoGlisten("G 3720", "6A. Bell Push Switch", 1, 10, 46, R.drawable.glisten_37033);
+        insertIntoGlisten("G 3702", "6A. Two Way Switch", 1, 10, 62, R.drawable.glisten_3758);
+        insertIntoGlisten("G 3703", "6A. Two Way Switch", 1, 10, 58, R.drawable.glisten_3703);
+        insertIntoGlisten("G 3717", "Light Control Dimmer 650W", 2, 10, 300, R.drawable.glisten_3717);
+        insertIntoGlisten("G 3732", "16-25 Motor Starter For 2.0 TON AC.", 2, 10, 340, R.drawable.glisten_3732);
+        insertIntoGlisten("G 3733", "32A D.P. Switch With Indicator", 2, 10, 245, R.drawable.glisten_3733);
+        insertIntoGlisten("G 3736", "Key Tag", 0, 10, 45, R.drawable.glisten_3736);
+        insertIntoGlisten("G 3772", "6A. Charger Socket With Shutter", 2, 10, 84, R.drawable.glisten_3772);
 
     }
 
