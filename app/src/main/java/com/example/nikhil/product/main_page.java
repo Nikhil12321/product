@@ -44,8 +44,7 @@ public class main_page extends AppCompatActivity {
     Timer repeatTask;
     int repeatInterval = 5000;
     int i = 0;
-    DbHelper dbHelper;
-    SharedPreferences sharedPreferences;
+
     String pref_name = "preferences";
 
 
@@ -56,6 +55,8 @@ public class main_page extends AppCompatActivity {
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_main_page);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Girish Product Catalog");
+        DbHelper dbHelper;
+        SharedPreferences sharedPreferences;
         sharedPreferences = getApplicationContext().getSharedPreferences(pref_name, 0);
         dbHelper = new DbHelper(this);
 
