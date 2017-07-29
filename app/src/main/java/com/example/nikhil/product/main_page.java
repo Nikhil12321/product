@@ -171,14 +171,16 @@ public class main_page extends AppCompatActivity {
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
                         // do something with the clicked item :D
 
-                        Intent intent = new Intent(getActivity(), Product_choice.class);
-                        startActivity(intent);
+                        Intent intent_glisten = new Intent(getActivity(), Product_choice.class);
+                        Intent intent_led = new Intent(getActivity(), LED.class);
                         //slideshow_image_View.setVisibility(View.GONE);
 
                         switch(position){
 
-                            case 1: modular(toolbar);
+                            case 1: startActivity(intent_glisten);
                                     result.closeDrawer();
+                                    break;
+                            case 3: startActivity(intent_led);
                                     break;
                         }
                         return true;
