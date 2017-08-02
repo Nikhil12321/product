@@ -11,8 +11,9 @@
     <dimen name="card_padding">10dp</dimen>
     <dimen name="card_corner_radius">0dp</dimen>
     <dimen name="led_card_main_box">100dp</dimen>
-    <dimen name="led_box_padding">5dp</dimen>
+    <dimen name="led_box_padding">3dp</dimen>
     <dimen name="led_box_primary_text_size">30sp</dimen>
     <dimen name="led_box_secondary_text_size">12sp</dimen>
     <dimen name="text_inside_box_padding">5dp</dimen>
+    <dimen name="size_and_cutout_size_padding">5dp</dimen>
 </resources>
