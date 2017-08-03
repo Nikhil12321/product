@@ -11,6 +11,8 @@ db.execSQL("create table "+GLISTEN_TABLE+" (code text, description text, modules
 
  */
 
+// Also for vox, vox touch, glam
+
 public class Glisten_product{
 
 

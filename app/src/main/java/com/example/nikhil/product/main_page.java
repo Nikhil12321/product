@@ -62,8 +62,9 @@ public class main_page extends AppCompatActivity {
 
         int is_initialized = sharedPreferences.getInt("is_initialized", 0);
         if(is_initialized == 0) {
-            dbHelper.initDatabase();
-
+            dbHelper.initDatabaseGlisten();
+            dbHelper.initDatabaseGlam();
+            dbHelper.initDatabaseVox();
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt("is_initialized", 1);
             editor.apply();

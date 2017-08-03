@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="led_card_main_box_color">#8BC34A</color>
+    <color name="glisten_color">#0097A7</color>
+    <color name="glam_color">#EF5350</color>
+    <color name="vox_color">#455A64</color>
 </resources>

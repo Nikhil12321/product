@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -32,15 +33,32 @@ public class Glisten extends AppCompatActivity {
     private int mShortAnimationDuration;
     private Animator mCurrentAnimator;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_glisten);
         /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);*/
+        String product = getIntent().getExtras().getString("product");
         listView = (ListView)findViewById(R.id.glisten_list_view);
         dbHelper = new DbHelper(this);
-        ArrayList<Glisten_product> product_list = dbHelper.getAllGlistenProducts();
+
+
+
+        // Choose the product whose list you want to fetch here
+        ArrayList<Glisten_product> product_list;
+
+        if(product.equals("glisten")) {
+            product_list = dbHelper.getAllGlistenProducts();
+
+        }
+        else if(product.equals("glam")) {
+            product_list = dbHelper.getAllGlamProducts();
+        }
+        else {
+            product_list = dbHelper.getAllVoxProducts();
+        }
 
         mShortAnimationDuration = getResources().getInteger(android.R.integer.config_shortAnimTime);
 

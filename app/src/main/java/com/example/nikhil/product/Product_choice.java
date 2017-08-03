@@ -24,24 +24,28 @@ public class Product_choice extends AppCompatActivity {
     public void glisten_click(View v){
 
         Intent intent = new Intent(this, Glisten.class);
+        intent.putExtra("product", "glisten");
         startActivity(intent);
     }
 
     public void glam_click(View v){
 
         Intent intent = new Intent(this, Glisten.class);
+        intent.putExtra("product", "glam");
         startActivity(intent);
     }
 
     public void vox_click(View v){
 
         Intent intent = new Intent(this, Glisten.class);
+        intent.putExtra("product", "vox");
         startActivity(intent);
     }
 
     public void vox_saga_click(View v){
 
         Intent intent = new Intent(this, Glisten.class);
+        intent.putExtra("product", "vox");
         startActivity(intent);
     }
 
