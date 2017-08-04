@@ -20,6 +20,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String GLISTEN_TABLE = "glisten";
     public static final String GLAM_TABLE = "glam";
     public static final String VOX_TABLE = "vox";
+    public static final String VOX_TOUCH_TABLE = "vox_touch";
 
 
     public DbHelper(Context context) {
@@ -32,6 +33,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("create table "+GLISTEN_TABLE+" (code text, description text, modules integer, pkg integer, mrp integer, image integer);");
         db.execSQL("create table "+GLAM_TABLE+" (code text, description text, modules integer, pkg integer, mrp integer, image integer);");
         db.execSQL("create table "+VOX_TABLE+" (code text, description text, modules integer, pkg integer, mrp integer, image integer);");
+        db.execSQL("create table "+VOX_TOUCH_TABLE+" (code text, description text, modules integer, pkg integer, mrp integer, image integer);");
 
     }
 
@@ -52,6 +54,27 @@ public class DbHelper extends SQLiteOpenHelper {
         try {
             Log.e("inside catch", "inserted values");
             db.insert(GLISTEN_TABLE, null, contentValues);
+            return true;
+        }
+        catch (Exception e){
+            Log.e("inside catch", "did not commit");
+            return false;
+        }
+    }
+
+    public boolean insertIntoVOXTouch(String code, String description, int modules, int pkg, int mrp, int image){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("code", code);
+        contentValues.put("description", description);
+        contentValues.put("modules", modules);
+        contentValues.put("pkg", pkg);
+        contentValues.put("mrp", mrp);
+        contentValues.put("image", image);
+        try {
+            Log.e("inside catch", "inserted values");
+            db.insert(VOX_TOUCH_TABLE, null, contentValues);
             return true;
         }
         catch (Exception e){
@@ -182,6 +205,31 @@ public class DbHelper extends SQLiteOpenHelper {
         return array_list;
     }
 
+    public ArrayList<Glisten_product> getAllVoxTouchProducts() {
+        ArrayList<Glisten_product> array_list = new ArrayList<Glisten_product>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+VOX_TOUCH_TABLE, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+
+            String code = res.getString(res.getColumnIndex("code"));
+            String description = res.getString(res.getColumnIndex("description"));
+            int modules = res.getInt(res.getColumnIndex("modules"));
+            int pkg = res.getInt(res.getColumnIndex("pkg"));
+            int mrp = res.getInt(res.getColumnIndex("mrp"));
+            int image = res.getInt(res.getColumnIndex("image"));
+
+            Glisten_product product = new Glisten_product(code, description, modules, pkg, mrp, image);
+
+            array_list.add(product);
+            res.moveToNext();
+        }
+        res.close();
+        return array_list;
+    }
+
     public void initDatabaseGlisten(){
 
         insertIntoGlisten("G 3702", "6A. Two Way Switch", 1, 10, 62, R.drawable.glisten_3758);
@@ -216,4 +264,11 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
+    public void initDatabaseVoxTouch(){
+
+        insertIntoVOXTouch("VOX Touch 1", "---", 0, 0, 0, R.drawable.vox_touch1);
+        insertIntoVOXTouch("VOX Touch 2", "---", 0, 0, 0, R.drawable.vox_touch2);
+        insertIntoVOXTouch("VOX Touch 3", "---", 0, 0, 0, R.drawable.vox_touch3);
+        insertIntoVOXTouch("VOX Touch 4", "---", 0, 0, 0, R.drawable.vox_touch4);
+    }
 }

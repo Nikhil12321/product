@@ -45,7 +45,7 @@ public class Product_choice extends AppCompatActivity {
     public void vox_saga_click(View v){
 
         Intent intent = new Intent(this, Glisten.class);
-        intent.putExtra("product", "vox");
+        intent.putExtra("product", "voxtouch");
         startActivity(intent);
     }
 

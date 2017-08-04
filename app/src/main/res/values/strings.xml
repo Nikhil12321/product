@@ -3,4 +3,5 @@
     <string name="title_activity_glisten">Glisten</string>
     <string name="title_activity_product_choice">Product_choice</string>
     <string name="title_activity_led">LED</string>
+    <string name="title_activity_accessories_choice">Accessories_choice</string>
 </resources>

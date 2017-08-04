@@ -26,6 +26,10 @@
         <activity
             android:name=".LED"
             android:label="@string/title_activity_led"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".Accessories_choice"
+            android:label="@string/title_activity_accessories_choice"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 

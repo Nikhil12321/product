@@ -56,9 +56,11 @@ public class Glisten extends AppCompatActivity {
         else if(product.equals("glam")) {
             product_list = dbHelper.getAllGlamProducts();
         }
-        else {
+        else if(product.equals("vox")){
             product_list = dbHelper.getAllVoxProducts();
         }
+        else
+            product_list = dbHelper.getAllVoxTouchProducts();
 
         mShortAnimationDuration = getResources().getInteger(android.R.integer.config_shortAnimTime);
 
