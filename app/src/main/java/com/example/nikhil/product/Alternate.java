@@ -7,68 +7,65 @@ import android.animation.ObjectAnimator;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import static java.security.AccessController.getContext;
 
-public class Glisten extends AppCompatActivity {
+public class Alternate extends AppCompatActivity {
+
 
     DbHelper dbHelper;
     ListView listView;
-    Glisten_adapter adapter;
+    Alternate_adapter adapter;
     private int mShortAnimationDuration;
     private Animator mCurrentAnimator;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_glisten);
-        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);*/
+
+
         String product = getIntent().getExtras().getString("product");
         listView = (ListView)findViewById(R.id.glisten_list_view);
         dbHelper = new DbHelper(this);
 
+        ArrayList<Properties> product_list;
 
-
-        // Choose the product whose list you want to fetch here
-        ArrayList<Glisten_product> product_list;
-
-        if(product.equals("glisten")) {
-            product_list = dbHelper.getAllGlistenProducts();
-
+        if(product.equals("lamp_holder")){
+            product_list = dbHelper.getAllLampHolder();
         }
-        else if(product.equals("glam")) {
-            product_list = dbHelper.getAllGlamProducts();
+        else if(product.equals("ceiling_rose")){
+            product_list = dbHelper.getAllCeilingRose();
         }
-        else if(product.equals("vox")){
-            product_list = dbHelper.getAllVoxProducts();
+        else if(product.equals("plug_top")){
+            product_list = dbHelper.getAllPlugTop();
         }
-        else
-            product_list = dbHelper.getAllVoxTouchProducts();
+        else if(product.equals("bed_switch")){
+            product_list = dbHelper.getAllBedSwitch();
+        }
+        else if(product.equals("dp_switch")){
+            product_list = dbHelper.getAllDPSwitch();
+        }
+        else{
+            product_list = dbHelper.getAllMultiPlug();
+        }
 
         mShortAnimationDuration = getResources().getInteger(android.R.integer.config_shortAnimTime);
 
-        for(int i=0; i<product_list.size(); i++)
-            Log.e("values", product_list.get(i).code);
 
-        adapter = new Glisten_adapter(this, R.layout.glisten_layout_vertical, product_list);
+        adapter = new Alternate_adapter(this, R.layout.alternate_layout, product_list);
         listView.setAdapter(adapter);
+
+
     }
 
     public void image_button_click(View v){
@@ -188,5 +185,4 @@ public class Glisten extends AppCompatActivity {
 
 
     }
-
 }

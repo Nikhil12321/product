@@ -10,6 +10,8 @@ import android.view.View;
 
 public class Product_choice extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +27,7 @@ public class Product_choice extends AppCompatActivity {
 
         Intent intent = new Intent(this, Glisten.class);
         intent.putExtra("product", "glisten");
+        intent.putExtra("product_category", "modular");
         startActivity(intent);
     }
 
@@ -32,6 +35,7 @@ public class Product_choice extends AppCompatActivity {
 
         Intent intent = new Intent(this, Glisten.class);
         intent.putExtra("product", "glam");
+        intent.putExtra("product_category", "modular");
         startActivity(intent);
     }
 
@@ -39,6 +43,7 @@ public class Product_choice extends AppCompatActivity {
 
         Intent intent = new Intent(this, Glisten.class);
         intent.putExtra("product", "vox");
+        intent.putExtra("product_category", "modular");
         startActivity(intent);
     }
 
@@ -46,6 +51,7 @@ public class Product_choice extends AppCompatActivity {
 
         Intent intent = new Intent(this, Glisten.class);
         intent.putExtra("product", "voxtouch");
+        intent.putExtra("product_category", "modular");
         startActivity(intent);
     }
 

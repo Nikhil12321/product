@@ -28,7 +28,7 @@
                 android:layout_height="250dp"
                 android:padding="5dp"
                 android:src="@drawable/glisten_3720"
-                android:id="@+id/glisten_image_button_vertical"
+                android:id="@+id/alternate_image_button_vertical"
                 android:onClick="image_button_click_alternate"/>
 
             <HorizontalScrollView
@@ -59,7 +59,7 @@
                             android:paddingLeft="20dp"
                             android:text="G-3703"
                             android:layout_column="2"
-                            android:id="@+id/glisten_code_vertical_alternate"
+                            android:id="@+id/alternate_code_vertical"
                             />
                     </TableRow>
                     <TableRow
@@ -92,7 +92,7 @@
                             android:paddingLeft="20dp"
                             android:text="6A. Bell Push Switch"
                             android:layout_column="2"
-                            android:id="@+id/glisten_description_vertical_alternate"
+                            android:id="@+id/alternate_description_vertical"
                             />
                     </TableRow>
 
@@ -126,7 +126,7 @@
                             android:paddingLeft="20dp"
                             android:text="10"
                             android:layout_column="2"
-                            android:id="@+id/glisten_pkg_vertical_alternate"
+                            android:id="@+id/alternate_pkg_vertical"
                             />
                     </TableRow>
                     <TableRow
@@ -159,7 +159,7 @@
                             android:paddingLeft="20dp"
                             android:text="Rs.58.00"
                             android:layout_column="2"
-                            android:id="@+id/glisten_mrp_vertical_alternate"
+                            android:id="@+id/alternate_mrp_vertical"
                             />
                     </TableRow>
                 </TableLayout>
