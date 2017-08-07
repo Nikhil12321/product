@@ -46,25 +46,7 @@ public class Glisten_adapter extends ArrayAdapter<Glisten_product>{
         Glisten_product p = getItem(position);
         if(p != null){
 
-            /*****Uncomment for horizaontal*********
-            ImageButton glisten_image_button = (ImageButton)v.findViewById(R.id.glisten_image_button);
-            TextView code_tv = (TextView)v.findViewById(R.id.glisten_code);
-            TextView description_tv = (TextView)v.findViewById(R.id.glisten_description);
-            TextView modules_tv = (TextView)v.findViewById(R.id.glisten_modules);
-            TextView pkg_tv = (TextView)v.findViewById(R.id.glisten_pkg);
-            TextView mrp_tv = (TextView)v.findViewById(R.id.glisten_mrp);
-            if(code_tv != null)
-                code_tv.setText(p.code);
-            if(description_tv != null)
-                description_tv.setText(p.description);
-            /*if(modules_tv != null)
-                modules_tv.setText("Asdasd");*/
-            /*if(pkg_tv != null)
-                pkg_tv.setText(p.pkg);
-            if(mrp_tv != null)
-                mrp_tv.setText(p.mrp);*/
 
-            /*******************************************/
 
             ImageButton glisten_image_button = (ImageButton)v.findViewById(R.id.glisten_image_button_vertical);
             TextView code_tv = (TextView)v.findViewById(R.id.glisten_code_vertical);

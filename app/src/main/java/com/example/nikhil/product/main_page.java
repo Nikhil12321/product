@@ -30,6 +30,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 import org.w3c.dom.Text;
 
 import java.lang.reflect.Array;
+import java.net.Inet4Address;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -42,7 +43,7 @@ public class main_page extends AppCompatActivity {
     Drawer result;
     ImageView slideshow_image_View;
     Timer repeatTask;
-    int repeatInterval = 5000;
+    int repeatInterval = 2000;
     int i = 0;
 
     String pref_name = "preferences";
@@ -71,6 +72,8 @@ public class main_page extends AppCompatActivity {
             dbHelper.initDatabaseDPSwitch();
             dbHelper.initDatabasePlugTop();
             dbHelper.initDatabaseMultiPlug();
+            dbHelper.initDatabaseDistributionBoard();
+            dbHelper.initDatabaseLED();
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt("is_initialized", 1);
             editor.apply();
@@ -182,6 +185,8 @@ public class main_page extends AppCompatActivity {
                         Intent intent_glisten = new Intent(getActivity(), Product_choice.class);
                         Intent intent_led = new Intent(getActivity(), LED.class);
                         Intent intent_accessories = new Intent(getActivity(), Accessories_choice.class);
+                        Intent intent_MCB = new Intent(getActivity(), MCB_choice.class);
+
                         //slideshow_image_View.setVisibility(View.GONE);
 
                         switch(position){
@@ -190,6 +195,8 @@ public class main_page extends AppCompatActivity {
                                     result.closeDrawer();
                                     break;
                             case 3: startActivity(intent_led);
+                                    break;
+                            case 4: startActivity(intent_MCB);
                                     break;
                             case 6: startActivity(intent_accessories);
                                     break;

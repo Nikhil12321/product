@@ -55,6 +55,9 @@ public class Alternate extends AppCompatActivity {
         else if(product.equals("dp_switch")){
             product_list = dbHelper.getAllDPSwitch();
         }
+        else if(product.equals("distribution_board")){
+            product_list = dbHelper.getAllDistributionBoard();
+        }
         else{
             product_list = dbHelper.getAllMultiPlug();
         }
@@ -68,7 +71,7 @@ public class Alternate extends AppCompatActivity {
 
     }
 
-    public void image_button_click(View v){
+    public void image_button_click_alternate(View v){
 
         if (mCurrentAnimator != null) {
             mCurrentAnimator.cancel();

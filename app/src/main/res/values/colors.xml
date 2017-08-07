@@ -7,4 +7,6 @@
     <color name="glisten_color">#0097A7</color>
     <color name="glam_color">#EF5350</color>
     <color name="vox_color">#455A64</color>
+    <color name="surface_lit_color">#F57C00</color>
+    <color name="side_lit_color">#8BC34A</color>
 </resources>

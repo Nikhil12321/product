@@ -27,7 +27,8 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String BED_SWITCH_TABLE = "bed_switch";
     public static final String DP_SWITCH_TABLE = "dp_switch";
     public static final String MULTI_PLUG_TABLE = "multi_plug";
-
+    public static final String MCB_TABLE = "mcb";
+    public static final String LED_TABLE = "led";
 
 
     public DbHelper(Context context) {
@@ -47,7 +48,8 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("create table "+BED_SWITCH_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
         db.execSQL("create table "+DP_SWITCH_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
         db.execSQL("create table "+MULTI_PLUG_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
-
+        db.execSQL("create table "+MCB_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
+        db.execSQL("create table "+LED_TABLE+" (description text, color integer, image integer);");
     }
 
     @Override
@@ -248,6 +250,47 @@ public class DbHelper extends SQLiteOpenHelper {
         try {
             Log.e("inside catch", "inserted values");
             db.insert(MULTI_PLUG_TABLE, null, contentValues);
+            return true;
+        }
+        catch (Exception e){
+            Log.e("inside catch", "did not commit");
+            return false;
+        }
+    }
+
+    public boolean insertIntoDistributionBoard(String code, String description, int pkg, float mrp, int image){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("code", code);
+        contentValues.put("description", description);
+        contentValues.put("pkg", pkg);
+        contentValues.put("mrp", mrp);
+        contentValues.put("image", image);
+        try {
+            Log.e("inside catch", "inserted values");
+            db.insert(MCB_TABLE, null, contentValues);
+            return true;
+        }
+        catch (Exception e){
+            Log.e("inside catch", "did not commit");
+            return false;
+        }
+    }
+
+
+    public boolean insertIntoLED(String desc, int color, int img){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("description", desc);
+        contentValues.put("color", color);
+        contentValues.put("image", img);
+
+
+        try {
+            Log.e("inside catch", "inserted values");
+            db.insert(LED_TABLE, null, contentValues);
             return true;
         }
         catch (Exception e){
@@ -504,6 +547,52 @@ public class DbHelper extends SQLiteOpenHelper {
         return array_list;
     }
 
+    public ArrayList<Properties> getAllDistributionBoard() {
+        ArrayList<Properties> array_list = new ArrayList<Properties>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+MCB_TABLE, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+
+            String code = res.getString(res.getColumnIndex("code"));
+            String description = res.getString(res.getColumnIndex("description"));
+            int pkg = res.getInt(res.getColumnIndex("pkg"));
+            float mrp = res.getInt(res.getColumnIndex("mrp"));
+            int image = res.getInt(res.getColumnIndex("image"));
+
+            Properties product = new Properties(code, description, pkg, mrp, image);
+
+            array_list.add(product);
+            res.moveToNext();
+        }
+        res.close();
+        return array_list;
+    }
+
+    public ArrayList<LED_properties> getAllLED() {
+        ArrayList<LED_properties> array_list = new ArrayList<LED_properties>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+LED_TABLE, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+
+            String desc = res.getString(res.getColumnIndex("description"));
+            int color = res.getInt(res.getColumnIndex("color"));
+            int image = res.getInt(res.getColumnIndex("image"));
+
+            LED_properties product = new LED_properties(desc, color, image);
+
+            array_list.add(product);
+            res.moveToNext();
+        }
+        res.close();
+        return array_list;
+    }
+
     public void initDatabaseGlisten(){
 
         insertIntoGlisten("G 3702", "6A. Two Way Switch", 1, 10, 62, R.drawable.glisten_3758);
@@ -601,6 +690,25 @@ public class DbHelper extends SQLiteOpenHelper {
         insertIntoMultiPlug("474", "2 To 5 Multi Plug", 10, 18.30f, R.drawable.multi_plug_474);
         insertIntoMultiPlug("439", "5 Pin multi plug", 20, 27.15f, R.drawable.multi_plug_439);
         insertIntoMultiPlug("440", "5 Pin multi plug", 20, 23.90f, R.drawable.multi_plug_440);
+    }
+
+    public void initDatabaseDistributionBoard(){
+
+        insertIntoDistributionBoard("2823", "4 Ways Db's Single Door", 1, 286f, R.drawable.distribution_board_2823);
+        insertIntoDistributionBoard("2824", "6 Ways Db's Single Door", 1, 335f, R.drawable.distribution_board_2824);
+        insertIntoDistributionBoard("2825", "8 Ways Db's Single Door", 1, 388f, R.drawable.distribution_board_2825);
+        insertIntoDistributionBoard("2826", "10 Ways Db's Single Door", 1, 455f, R.drawable.distribution_board_2826);
+        insertIntoDistributionBoard("2827", "12 Ways Db's Single Door", 1, 515f, R.drawable.distribution_board_2827);
+        insertIntoDistributionBoard("2828", "16 Ways Db's Single Door", 1, 634f, R.drawable.distribution_board_2828);
+
+    }
+
+    public void initDatabaseLED(){
+
+        insertIntoLED("SLIM SIDE-LIT PANEL LIGHT", R.color.side_lit_color, R.drawable.slim_side_lit);
+        insertIntoLED("SURFACE LIT PANEL LIGHT", R.color.surface_lit_color, R.drawable.surface_lit);
+        insertIntoLED("24x24 SLIM SIDE-LIT PANEL LIGHT", R.color.side_lit_color, R.drawable.side_lit);
+
     }
 
 }

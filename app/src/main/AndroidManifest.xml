@@ -34,6 +34,10 @@
         <activity
             android:name=".Accessories_choice"
             android:label="@string/title_activity_accessories_choice"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".MCB_choice"
+            android:label="@string/title_activity_mcb_choice"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 

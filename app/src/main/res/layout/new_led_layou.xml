@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/card_padding"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/led_card_main_box_color"
+        android:id="@+id/new_led_linear_layout"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/new_led_heading_text_size"
+            android:text="Slim side-lit panel light"
+            android:textColor="@android:color/white"
+            android:textAlignment="center"
+            android:padding="@dimen/new_text_inside_box_padding"
+            android:id="@+id/new_led_leyout_led_name"
+            />
+
+
+    </LinearLayout>
+
+    <ImageButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/slim_side_lit"
+        android:id="@+id/new_led_leyout_led_image"
+        />
+
+</LinearLayout>
