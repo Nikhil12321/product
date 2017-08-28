@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.example.nikhil.product.Glisten"
-    android:background="#B3E5FC"
+    android:background="@color/girish_primary_color"
     android:id="@+id/container">
 
 

@@ -6,7 +6,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="prod_horz_divider_height">2dp</dimen>
     <dimen name="card_divider_height">5dp</dimen>
-    <dimen name="card_height">120dp</dimen>
+    <dimen name="card_height">100dp</dimen>
     <dimen name="card_elevation">0dp</dimen>
     <dimen name="card_padding">10dp</dimen>
     <dimen name="card_corner_radius">0dp</dimen>

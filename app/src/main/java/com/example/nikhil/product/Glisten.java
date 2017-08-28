@@ -111,6 +111,7 @@ public class Glisten extends AppCompatActivity {
         // Hide the thumbnail and show the zoomed-in view. When the animation begins,
         // it will position the zoomed-in view in the place of the thumbnail.
         image.setAlpha(0f);
+        listView.setAlpha(0f);
         expanded_image_view.setVisibility(View.VISIBLE);
 
         // Set the pivot point for SCALE_X and SCALE_Y transformations to the top-left corner of
@@ -170,6 +171,7 @@ public class Glisten extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animator animation) {
                         image.setAlpha(1f);
+                        listView.setAlpha(1f);
                         expanded_image_view.setVisibility(View.GONE);
                         mCurrentAnimator = null;
                     }
@@ -177,6 +179,7 @@ public class Glisten extends AppCompatActivity {
                     @Override
                     public void onAnimationCancel(Animator animation) {
                         image.setAlpha(1f);
+                        listView.setAlpha(1f);
                         expanded_image_view.setVisibility(View.GONE);
                         mCurrentAnimator = null;
                     }

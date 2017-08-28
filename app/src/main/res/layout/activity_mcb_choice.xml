@@ -15,7 +15,7 @@
             android:id="@+id/toolbar_mcb_choice"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
+            android:background="@color/girish_primary_color"
 
             android:elevation="4dp"
             android:theme="@style/MyToolbar"

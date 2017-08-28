@@ -27,7 +27,7 @@
 
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                card_view:cardBackgroundColor="#0097A7"
+                card_view:cardBackgroundColor="@color/girish_crappy_gray"
                 card_view:cardElevation="@dimen/card_elevation"
                 android:padding="@dimen/card_padding"
                 android:onClick="glisten_click"
@@ -59,7 +59,7 @@
 
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                card_view:cardBackgroundColor="#EF5350"
+                card_view:cardBackgroundColor="@color/girish_crappy_gray"
                 card_view:cardElevation="@dimen/card_elevation"
                 android:padding="@dimen/card_padding"
                 android:onClick="glam_click"
@@ -94,7 +94,7 @@
             android:layout_alignParentStart="true"
             android:padding="@dimen/card_padding"
             android:onClick="vox_click"
-            card_view:cardBackgroundColor="#455A64"
+            card_view:cardBackgroundColor="@color/girish_crappy_gray"
             >
 
             <TextView
@@ -123,7 +123,7 @@
             card_view:cardElevation="@dimen/card_elevation"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
-            card_view:cardBackgroundColor= "#009688"
+            card_view:cardBackgroundColor= "@color/girish_crappy_gray"
             android:padding="@dimen/card_padding"
             android:onClick="vox_saga_click"
             >

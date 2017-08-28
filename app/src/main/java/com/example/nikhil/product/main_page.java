@@ -144,17 +144,8 @@ public class main_page extends AppCompatActivity {
 
         AccountHeader headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
-                .withHeaderBackground(R.drawable.dotted_background)
-
-                .addProfiles(
-                        new ProfileDrawerItem().withName("Girish Switches").withIcon(getResources().getDrawable(R.drawable.girish))
-                )
-                .withOnAccountHeaderListener(new AccountHeader.OnAccountHeaderListener() {
-                    @Override
-                    public boolean onProfileChanged(View view, IProfile profile, boolean currentProfile) {
-                        return false;
-                    }
-                })
+                .withHeaderBackground(R.drawable.dotted_5_3)
+                .withHeaderBackgroundScaleType(ImageView.ScaleType.CENTER_CROP)
                 .build();
 
         new DrawerBuilder().withActivity(this).build();
@@ -167,11 +158,12 @@ public class main_page extends AppCompatActivity {
                 .withAccountHeader(headerResult)
                 .addDrawerItems(
                         new SecondaryDrawerItem().withName("Modular"),
-                        new SecondaryDrawerItem().withName("Cables"),
-                        new SecondaryDrawerItem().withName("Wires & LED"),
+                        new SecondaryDrawerItem().withName("LED"),
+                        new SecondaryDrawerItem().withName("Wires and Cables"),
                         new SecondaryDrawerItem().withName("MCBs"),
                         new SecondaryDrawerItem().withName("Switches"),
                         new SecondaryDrawerItem().withName("Accessories"),
+                        new SecondaryDrawerItem().withName("Other Accessories"),
                         new SecondaryDrawerItem().withName("Ceiling Fans"),
                         new SecondaryDrawerItem().withName("Water Heaters"),
                         new SecondaryDrawerItem().withName("Life Style Living")
@@ -194,7 +186,7 @@ public class main_page extends AppCompatActivity {
                             case 1: startActivity(intent_glisten);
                                     result.closeDrawer();
                                     break;
-                            case 3: startActivity(intent_led);
+                            case 2: startActivity(intent_led);
                                     break;
                             case 4: startActivity(intent_MCB);
                                     break;

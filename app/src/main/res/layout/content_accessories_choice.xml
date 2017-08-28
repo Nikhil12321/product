@@ -7,7 +7,19 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
 
     >
-
+<!--
+This is the first color list that is more colorful and attractive
+unlike the drab and old single colored that they want.
+I mean, either tell me what you want straightaway and explain the
+design language or don't change what the developer has made. He has
+put his mind into it and tried to give you the best of what he thinks is
+the best.
+Anyway, here is the list
+#0097A7
+#EF5350
+#455A64
+#0097A7
+-->
 
     <LinearLayout
         android:layout_width="match_parent"
