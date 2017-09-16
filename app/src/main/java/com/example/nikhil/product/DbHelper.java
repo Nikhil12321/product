@@ -29,6 +29,19 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String MULTI_PLUG_TABLE = "multi_plug";
     public static final String MCB_TABLE = "mcb";
     public static final String LED_TABLE = "led";
+    public static final String WISDOM_TABLE = "wisdom";
+    public static final String VIJETA_TABLE = "vijeta";
+    public static final String MINI_GOLD_TABLE = "minigold";
+    public static final String VICTOR_TABLE = "victor";
+    public static final String GRACIA_TABLE = "gracia";
+    public static final String MUSICAL_BELL_TABLE = "musicalbell";
+    public static final String CONVERSION_PLUG_TABLE = "conversionplug";
+    public static final String GANG_BOX_TABLE = "gangbox";
+    public static final String PORCELAIN_FUSE_TABLE = "porcelainfuse";
+    public static final String IRON_CONNECTOR_TABLE = "ironconnector";
+    public static final String LINE_TESTER_TABLE = "linetester";
+    public static final String INSULATION_TAPE_TABLE = "insulationtape";
+
 
 
     public DbHelper(Context context) {
@@ -49,6 +62,18 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("create table "+DP_SWITCH_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
         db.execSQL("create table "+MULTI_PLUG_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
         db.execSQL("create table "+MCB_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
+        db.execSQL("create table "+WISDOM_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
+        db.execSQL("create table "+VIJETA_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
+        db.execSQL("create table "+MINI_GOLD_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
+        db.execSQL("create table "+VICTOR_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
+        db.execSQL("create table "+GRACIA_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
+        db.execSQL("create table "+MUSICAL_BELL_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
+        db.execSQL("create table "+CONVERSION_PLUG_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
+        db.execSQL("create table "+GANG_BOX_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
+        db.execSQL("create table "+PORCELAIN_FUSE_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
+        db.execSQL("create table "+IRON_CONNECTOR_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
+        db.execSQL("create table "+LINE_TESTER_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
+        db.execSQL("create table "+INSULATION_TAPE_TABLE+" (code text, description text, pkg integer, mrp float, image integer);");
         db.execSQL("create table "+LED_TABLE+" (description text, color integer, image integer);");
     }
 
@@ -219,6 +244,150 @@ public class DbHelper extends SQLiteOpenHelper {
         }
     }
 
+
+    public boolean insertIntoMusicalBell(String code, String description, int pkg, float mrp, int image){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("code", code);
+        contentValues.put("description", description);
+        contentValues.put("pkg", pkg);
+        contentValues.put("mrp", mrp);
+        contentValues.put("image", image);
+        try {
+            Log.e("inside catch", "inserted values");
+            db.insert(MUSICAL_BELL_TABLE, null, contentValues);
+            return true;
+        }
+        catch (Exception e){
+            Log.e("inside catch", "did not commit");
+            return false;
+        }
+    }
+
+    public boolean insertIntoConversionPlug(String code, String description, int pkg, float mrp, int image){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("code", code);
+        contentValues.put("description", description);
+        contentValues.put("pkg", pkg);
+        contentValues.put("mrp", mrp);
+        contentValues.put("image", image);
+        try {
+            Log.e("inside catch", "inserted values");
+            db.insert(CONVERSION_PLUG_TABLE, null, contentValues);
+            return true;
+        }
+        catch (Exception e){
+            Log.e("inside catch", "did not commit");
+            return false;
+        }
+    }
+
+    public boolean insertIntoGangBox(String code, String description, int pkg, float mrp, int image){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("code", code);
+        contentValues.put("description", description);
+        contentValues.put("pkg", pkg);
+        contentValues.put("mrp", mrp);
+        contentValues.put("image", image);
+        try {
+            Log.e("inside catch", "inserted values");
+            db.insert(GANG_BOX_TABLE, null, contentValues);
+            return true;
+        }
+        catch (Exception e){
+            Log.e("inside catch", "did not commit");
+            return false;
+        }
+    }
+
+
+    public boolean insertIntoPorcelainFuse(String code, String description, int pkg, float mrp, int image){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("code", code);
+        contentValues.put("description", description);
+        contentValues.put("pkg", pkg);
+        contentValues.put("mrp", mrp);
+        contentValues.put("image", image);
+        try {
+            Log.e("inside catch", "inserted values");
+            db.insert(PORCELAIN_FUSE_TABLE, null, contentValues);
+            return true;
+        }
+        catch (Exception e){
+            Log.e("inside catch", "did not commit");
+            return false;
+        }
+    }
+
+
+    public boolean insertIntoIronConnector(String code, String description, int pkg, float mrp, int image){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("code", code);
+        contentValues.put("description", description);
+        contentValues.put("pkg", pkg);
+        contentValues.put("mrp", mrp);
+        contentValues.put("image", image);
+        try {
+            Log.e("inside catch", "inserted values");
+            db.insert(IRON_CONNECTOR_TABLE, null, contentValues);
+            return true;
+        }
+        catch (Exception e){
+            Log.e("inside catch", "did not commit");
+            return false;
+        }
+    }
+
+
+    public boolean insertIntoLineTester(String code, String description, int pkg, float mrp, int image){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("code", code);
+        contentValues.put("description", description);
+        contentValues.put("pkg", pkg);
+        contentValues.put("mrp", mrp);
+        contentValues.put("image", image);
+        try {
+            Log.e("inside catch", "inserted values");
+            db.insert(LINE_TESTER_TABLE, null, contentValues);
+            return true;
+        }
+        catch (Exception e){
+            Log.e("inside catch", "did not commit");
+            return false;
+        }
+    }
+
+    public boolean insertIntoInsulationTape(String code, String description, int pkg, float mrp, int image){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("code", code);
+        contentValues.put("description", description);
+        contentValues.put("pkg", pkg);
+        contentValues.put("mrp", mrp);
+        contentValues.put("image", image);
+        try {
+            Log.e("inside catch", "inserted values");
+            db.insert(INSULATION_TAPE_TABLE, null, contentValues);
+            return true;
+        }
+        catch (Exception e){
+            Log.e("inside catch", "did not commit");
+            return false;
+        }
+    }
+
     public boolean insertIntoDPSwitch(String code, String description, int pkg, float mrp, int image){
 
         SQLiteDatabase db = this.getWritableDatabase();
@@ -278,6 +447,105 @@ public class DbHelper extends SQLiteOpenHelper {
         }
     }
 
+    public boolean insertIntoWisdom(String code, String description, int pkg, float mrp, int image){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("code", code);
+        contentValues.put("description", description);
+        contentValues.put("pkg", pkg);
+        contentValues.put("mrp", mrp);
+        contentValues.put("image", image);
+        try {
+            Log.e("inside catch", "inserted values");
+            db.insert(WISDOM_TABLE, null, contentValues);
+            return true;
+        }
+        catch (Exception e){
+            Log.e("inside catch", "did not commit");
+            return false;
+        }
+    }
+
+    public boolean insertIntoVictor(String code, String description, int pkg, float mrp, int image){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("code", code);
+        contentValues.put("description", description);
+        contentValues.put("pkg", pkg);
+        contentValues.put("mrp", mrp);
+        contentValues.put("image", image);
+        try {
+            Log.e("inside catch", "inserted values");
+            db.insert(VICTOR_TABLE, null, contentValues);
+            return true;
+        }
+        catch (Exception e){
+            Log.e("inside catch", "did not commit");
+            return false;
+        }
+    }
+
+    public boolean insertIntoVijeta(String code, String description, int pkg, float mrp, int image){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("code", code);
+        contentValues.put("description", description);
+        contentValues.put("pkg", pkg);
+        contentValues.put("mrp", mrp);
+        contentValues.put("image", image);
+        try {
+            Log.e("inside catch", "inserted values");
+            db.insert(VICTOR_TABLE, null, contentValues);
+            return true;
+        }
+        catch (Exception e){
+            Log.e("inside catch", "did not commit");
+            return false;
+        }
+    }
+
+    public boolean insertIntoGracia(String code, String description, int pkg, float mrp, int image){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("code", code);
+        contentValues.put("description", description);
+        contentValues.put("pkg", pkg);
+        contentValues.put("mrp", mrp);
+        contentValues.put("image", image);
+        try {
+            Log.e("inside catch", "inserted values");
+            db.insert(GRACIA_TABLE, null, contentValues);
+            return true;
+        }
+        catch (Exception e){
+            Log.e("inside catch", "did not commit");
+            return false;
+        }
+    }
+
+    public boolean insertIntoMiniGold(String code, String description, int pkg, float mrp, int image){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("code", code);
+        contentValues.put("description", description);
+        contentValues.put("pkg", pkg);
+        contentValues.put("mrp", mrp);
+        contentValues.put("image", image);
+        try {
+            Log.e("inside catch", "inserted values");
+            db.insert(MINI_GOLD_TABLE, null, contentValues);
+            return true;
+        }
+        catch (Exception e){
+            Log.e("inside catch", "did not commit");
+            return false;
+        }
+    }
 
     public boolean insertIntoLED(String desc, int color, int img){
 
@@ -298,6 +566,8 @@ public class DbHelper extends SQLiteOpenHelper {
             return false;
         }
     }
+
+
 
     public ArrayList<Glisten_product> getAllGlistenProducts() {
         ArrayList<Glisten_product> array_list = new ArrayList<Glisten_product>();
@@ -403,11 +673,211 @@ public class DbHelper extends SQLiteOpenHelper {
         return array_list;
     }
 
+
+    public ArrayList<Properties> getAllWisdom() {
+        ArrayList<Properties> array_list = new ArrayList<Properties>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+WISDOM_TABLE, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+
+            String code = res.getString(res.getColumnIndex("code"));
+            String description = res.getString(res.getColumnIndex("description"));
+            int pkg = res.getInt(res.getColumnIndex("pkg"));
+            float mrp = res.getInt(res.getColumnIndex("mrp"));
+            int image = res.getInt(res.getColumnIndex("image"));
+
+            Properties product = new Properties(code, description, pkg, mrp, image);
+
+            array_list.add(product);
+            res.moveToNext();
+        }
+        res.close();
+        return array_list;
+    }
+
     public ArrayList<Properties> getAllLampHolder() {
         ArrayList<Properties> array_list = new ArrayList<Properties>();
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from "+LAMP_HOLDER_TABLE, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+
+            String code = res.getString(res.getColumnIndex("code"));
+            String description = res.getString(res.getColumnIndex("description"));
+            int pkg = res.getInt(res.getColumnIndex("pkg"));
+            float mrp = res.getInt(res.getColumnIndex("mrp"));
+            int image = res.getInt(res.getColumnIndex("image"));
+
+            Properties product = new Properties(code, description, pkg, mrp, image);
+
+            array_list.add(product);
+            res.moveToNext();
+        }
+        res.close();
+        return array_list;
+    }
+
+
+    public ArrayList<Properties> getAllMusicalBell() {
+        ArrayList<Properties> array_list = new ArrayList<Properties>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+MUSICAL_BELL_TABLE, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+
+            String code = res.getString(res.getColumnIndex("code"));
+            String description = res.getString(res.getColumnIndex("description"));
+            int pkg = res.getInt(res.getColumnIndex("pkg"));
+            float mrp = res.getInt(res.getColumnIndex("mrp"));
+            int image = res.getInt(res.getColumnIndex("image"));
+
+            Properties product = new Properties(code, description, pkg, mrp, image);
+
+            array_list.add(product);
+            res.moveToNext();
+        }
+        res.close();
+        return array_list;
+    }
+
+
+
+    public ArrayList<Properties> getAllConversionPlug() {
+        ArrayList<Properties> array_list = new ArrayList<Properties>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+CONVERSION_PLUG_TABLE, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+
+            String code = res.getString(res.getColumnIndex("code"));
+            String description = res.getString(res.getColumnIndex("description"));
+            int pkg = res.getInt(res.getColumnIndex("pkg"));
+            float mrp = res.getInt(res.getColumnIndex("mrp"));
+            int image = res.getInt(res.getColumnIndex("image"));
+
+            Properties product = new Properties(code, description, pkg, mrp, image);
+
+            array_list.add(product);
+            res.moveToNext();
+        }
+        res.close();
+        return array_list;
+    }
+
+
+    public ArrayList<Properties> getAllGangBox() {
+        ArrayList<Properties> array_list = new ArrayList<Properties>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+GANG_BOX_TABLE, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+
+            String code = res.getString(res.getColumnIndex("code"));
+            String description = res.getString(res.getColumnIndex("description"));
+            int pkg = res.getInt(res.getColumnIndex("pkg"));
+            float mrp = res.getInt(res.getColumnIndex("mrp"));
+            int image = res.getInt(res.getColumnIndex("image"));
+
+            Properties product = new Properties(code, description, pkg, mrp, image);
+
+            array_list.add(product);
+            res.moveToNext();
+        }
+        res.close();
+        return array_list;
+    }
+
+    public ArrayList<Properties> getAllPorcelainTable() {
+        ArrayList<Properties> array_list = new ArrayList<Properties>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+PORCELAIN_FUSE_TABLE, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+
+            String code = res.getString(res.getColumnIndex("code"));
+            String description = res.getString(res.getColumnIndex("description"));
+            int pkg = res.getInt(res.getColumnIndex("pkg"));
+            float mrp = res.getInt(res.getColumnIndex("mrp"));
+            int image = res.getInt(res.getColumnIndex("image"));
+
+            Properties product = new Properties(code, description, pkg, mrp, image);
+
+            array_list.add(product);
+            res.moveToNext();
+        }
+        res.close();
+        return array_list;
+    }
+
+
+    public ArrayList<Properties> getAllIronConnector() {
+        ArrayList<Properties> array_list = new ArrayList<Properties>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+IRON_CONNECTOR_TABLE, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+
+            String code = res.getString(res.getColumnIndex("code"));
+            String description = res.getString(res.getColumnIndex("description"));
+            int pkg = res.getInt(res.getColumnIndex("pkg"));
+            float mrp = res.getInt(res.getColumnIndex("mrp"));
+            int image = res.getInt(res.getColumnIndex("image"));
+
+            Properties product = new Properties(code, description, pkg, mrp, image);
+
+            array_list.add(product);
+            res.moveToNext();
+        }
+        res.close();
+        return array_list;
+    }
+
+
+    public ArrayList<Properties> getAllLineTester() {
+        ArrayList<Properties> array_list = new ArrayList<Properties>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+LINE_TESTER_TABLE, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+
+            String code = res.getString(res.getColumnIndex("code"));
+            String description = res.getString(res.getColumnIndex("description"));
+            int pkg = res.getInt(res.getColumnIndex("pkg"));
+            float mrp = res.getInt(res.getColumnIndex("mrp"));
+            int image = res.getInt(res.getColumnIndex("image"));
+
+            Properties product = new Properties(code, description, pkg, mrp, image);
+
+            array_list.add(product);
+            res.moveToNext();
+        }
+        res.close();
+        return array_list;
+    }
+
+
+    public ArrayList<Properties> getAllInsulationTape() {
+        ArrayList<Properties> array_list = new ArrayList<Properties>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+INSULATION_TAPE_TABLE, null );
         res.moveToFirst();
 
         while(res.isAfterLast() == false){
@@ -703,6 +1173,100 @@ public class DbHelper extends SQLiteOpenHelper {
 
     }
 
+    public void initDatabaseWisdom(){
+
+        insertIntoWisdom("501", "One Way Switch", 20, 25.15f, R.drawable.wisdom_501);
+        insertIntoWisdom("502", "Two Way Switch", 20, 29.20f, R.drawable.wisdom_502);
+        insertIntoWisdom("503", "Bell Push Switch", 20, 28.00f, R.drawable.wisdom_503);
+        insertIntoWisdom("504", "Two Pin Socket", 20, 25.60f, R.drawable.wisdom_504);
+
+    }
+
+    public void initDatabaseMiniGold(){
+
+        insertIntoMiniGold("070", "One Way Switch", 20, 15.40f, R.drawable.minigold_070);
+        insertIntoMiniGold("071", "Two Way Switch", 20, 18.00f, R.drawable.minigold_071);
+        insertIntoMiniGold("072", "Bell Push Switch", 20, 16.00f, R.drawable.minigold_072);
+        insertIntoMiniGold("075", "One Way Switch", 20, 15.40f, R.drawable.minigold_075);
+
+    }
+
+    public void initDatabaseVijeta(){
+
+        insertIntoVijeta("034", "One Way Switch", 20, 24.40f, R.drawable.vijeta_034);
+        insertIntoVijeta("035", "Two Way Switch", 20, 28.10f, R.drawable.vijeta_035);
+        insertIntoVijeta("036", "Bell Push Switch", 20, 24.80f, R.drawable.vijeta_036);
+        insertIntoVijeta("039", "One Way Switch", 20, 16.60f, R.drawable.vijeta_039);
+        insertIntoVijeta("041", "Two Way Switch", 20, 19.30f, R.drawable.vijeta_040);
+
+    }
+
+    public void initDatabaseVictor(){
+
+        insertIntoVictor("046", "One way switch", 20, 17.00f, R.drawable.victor_046);
+        insertIntoVictor("047", "Two way switch", 20, 20.10f, R.drawable.victor_047);
+        insertIntoVictor("048", "Bell Push switch", 20, 18.00f, R.drawable.victor_048);
+
+    }
+
+    public void initDatabaseGracia(){
+
+        insertIntoGracia("401", "One way switch", 20, 19.10f, R.drawable.gracia_401);
+        insertIntoGracia("402", "Two way switch", 20, 22.50f, R.drawable.gracia_402);
+        insertIntoGracia("403", "Bell push switch", 20, 20.90f, R.drawable.gracia_403);
+
+    }
+
+    public void initDatabaseMusicalBell(){
+
+        insertIntoMusicalBell("262", "Parrot Bell", 12, 130.30f, R.drawable.musical_bell_262);
+        insertIntoMusicalBell("722", "Ding Dong", 10, 109.60f, R.drawable.musical_bell_263);
+        insertIntoMusicalBell("264", "Fish Bell", 20, 57.20f, R.drawable.musical_bell_264);
+        insertIntoMusicalBell("708", "Please open the door", 12, 182.65f, R.drawable.musical_bell_708);
+        insertIntoMusicalBell("709", "30 Hindi Songs, Aarti, Aum Namah Shivay, Radhey Radhey, Satnam Shri Wahe Guru, Church", 10, 182.65f, R.drawable.musical_bell_709);
+
+
+    }
+
+    public void initDatabaseConversionPlug(){
+
+        insertIntoConversionPlug("237", "Three Pin Conversion Plug", 10, 49.60f, R.drawable.conversion_plug_237);
+        insertIntoConversionPlug("239", "Two Pin Conversion Plug", 10, 16.00f, R.drawable.conversion_plug_239);
+    }
+
+    public void initDatabaseGangBox(){
+
+        insertIntoGangBox("393", "One Way Gang Box", 10, 12.00f, R.drawable.gang_box_393);
+        insertIntoGangBox("394", "Two Way Gang Box", 10, 18.70f, R.drawable.gang_box_394);
+        insertIntoGangBox("395", "Three Way Gang Box", 10, 20.35f, R.drawable.gang_box_394);
+        insertIntoGangBox("396", "Four Way Gang Box", 10, 22.35f, R.drawable.gang_box_396);
+        insertIntoGangBox("397", "Five Way Gang Box", 10, 23.40f, R.drawable.gang_box_397);
+        insertIntoGangBox("398", "Six Way Gang Box", 10, 25.40f, R.drawable.gang_box_398);
+        insertIntoGangBox("437", "One Way Power Gang Box", 10, 20.35f, R.drawable.gang_box_437);
+        insertIntoGangBox("400", "Two Way Power Gang Box", 10, 29.50f, R.drawable.gang_box_400);
+    }
+
+    public void initDatabaseIronConnector(){
+
+        insertIntoIronConnector("234", "Iron Connector", 10, 29.00f, R.drawable.iron_connector_234);
+        insertIntoIronConnector("235", "Iron Connector", 10, 33.55f, R.drawable.iron_connector_235);
+        insertIntoIronConnector("236", "Iron Connector with indicator", 10, 45.00f, R.drawable.iron_connector_236);
+
+    }
+
+    public void initDatabaseLineTester(){
+
+        insertIntoLineTester("226", "Line Tester", 10, 19.20f, R.drawable.line_tester_226);
+        insertIntoLineTester("378", "Line Tester", 10, 18.00f, R.drawable.line_tester_378);
+        insertIntoLineTester("456", "Line Tester", 10, 27.40f, R.drawable.line_tester_456);
+        insertIntoLineTester("457", "Line Tester", 10, 35.55f, R.drawable.line_tester_457);
+    }
+
+    public void initDatabaseInsulationTape(){
+
+        insertIntoInsulationTape("438", "Solid Grip Insulation Tape", 30, 13.40f, R.drawable.insulation_tape_438);
+    }
+
     public void initDatabaseLED(){
 
         insertIntoLED("SLIM SIDE-LIT PANEL LIGHT", R.color.side_lit_color, R.drawable.slim_side_lit);
@@ -710,5 +1274,9 @@ public class DbHelper extends SQLiteOpenHelper {
         insertIntoLED("24x24 SLIM SIDE-LIT PANEL LIGHT", R.color.side_lit_color, R.drawable.side_lit);
 
     }
+
+
+
+
 
 }
