@@ -8,9 +8,9 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".main_page"
-            android:screenOrientation="portrait"
-            >
+        <activity
+            android:name=".main_page"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,6 +46,10 @@
             android:name=".MCB_choice"
             android:label="@string/title_activity_mcb_choice"
             android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".OtherAccessoriesChoice"
+            android:label="@string/title_activity_other_accessories_choice"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 

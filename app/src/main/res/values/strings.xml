@@ -5,4 +5,5 @@
     <string name="title_activity_led">LED</string>
     <string name="title_activity_accessories_choice">Accessories_choice</string>
     <string name="title_activity_mcb_choice">MCB_choice</string>
+    <string name="title_activity_other_accessories_choice">OtherAccessoriesChoice</string>
 </resources>
