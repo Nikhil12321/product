@@ -1223,7 +1223,7 @@ public class DbHelper extends SQLiteOpenHelper {
         insertIntoMusicalBell("722", "Ding Dong", 10, 109.60f, R.drawable.musical_bell_263);
         insertIntoMusicalBell("264", "Fish Bell", 20, 57.20f, R.drawable.musical_bell_264);
         insertIntoMusicalBell("708", "Please open the door", 12, 182.65f, R.drawable.musical_bell_708);
-        insertIntoMusicalBell("709", "30 Hindi Songs, Aarti, Aum Namah Shivay, Radhey Radhey, Satnam Shri Wahe Guru, Church", 10, 182.65f, R.drawable.musical_bell_709);
+        insertIntoMusicalBell("709", "30 Hindi Songs, Aarti, Aum Namah Shivay, Radhey Radhey, \nSatnam Shri Wahe Guru, Church", 10, 182.65f, R.drawable.musical_bell_709);
 
 
     }

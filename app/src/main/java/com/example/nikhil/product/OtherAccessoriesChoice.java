@@ -1,5 +1,6 @@
 package com.example.nikhil.product;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,17 +14,52 @@ public class OtherAccessoriesChoice extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_other_accessories_choice);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarOtherAccessories);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Other Accessories");
+    }
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+    public void musical_bell_click(View v){
+
+        Intent intent = new Intent(this, Alternate.class);
+        intent.putExtra("product", "musical_bell");
+        startActivity(intent);
+    }
+
+    public void conversion_plug_click(View v){
+
+        Intent intent = new Intent(this, Alternate.class);
+        intent.putExtra("product", "conversion_plug");
+        startActivity(intent);
+    }
+
+    public void gang_box_click(View v){
+
+        Intent intent = new Intent(this, Alternate.class);
+        intent.putExtra("product", "gang_box");
+        startActivity(intent);
+    }
+
+    public void iron_connector_click(View v){
+
+
+        Intent intent = new Intent(this, Alternate.class);
+        intent.putExtra("product", "iron_connector");
+        startActivity(intent);
+    }
+
+    public void line_tester_click(View v){
+
+        Intent intent = new Intent(this, Alternate.class);
+        intent.putExtra("product", "line_tester");
+        startActivity(intent);
+    }
+
+    public void insulation_tape_click(View v){
+
+        Intent intent = new Intent(this, Alternate.class);
+        intent.putExtra("product", "insulation_tape");
+        startActivity(intent);
     }
 
 }

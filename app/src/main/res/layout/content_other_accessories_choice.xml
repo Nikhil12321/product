@@ -1,11 +1,204 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.nikhil.product.OtherAccessoriesChoice"
-    tools:showIn="@layout/activity_other_accessories_choice">
 
-</android.support.constraint.ConstraintLayout>
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/card_divider_height">
+
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_height"
+            card_view:cardCornerRadius="@dimen/card_corner_radius"
+
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            card_view:cardBackgroundColor="@color/girish_crappy_gray"
+            card_view:cardElevation="@dimen/card_elevation"
+            android:padding="@dimen/card_padding"
+            android:onClick="musical_bell_click"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Musical Bell"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"/>
+        </android.support.v7.widget.CardView>
+
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_divider_height"
+            />
+
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_height"
+            card_view:cardCornerRadius="@dimen/card_corner_radius"
+
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            card_view:cardBackgroundColor="@color/girish_crappy_gray"
+            card_view:cardElevation="@dimen/card_elevation"
+            android:padding="@dimen/card_padding"
+            android:onClick="conversion_plug_click"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Conversion Plug"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"/>
+        </android.support.v7.widget.CardView>
+
+
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_divider_height"
+            />
+
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_height"
+            card_view:cardCornerRadius="@dimen/card_corner_radius"
+            card_view:cardElevation="@dimen/card_elevation"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:padding="@dimen/card_padding"
+            android:onClick="gang_box_click"
+            card_view:cardBackgroundColor="@color/girish_crappy_gray"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Gang Box"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"/>
+        </android.support.v7.widget.CardView>
+
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_divider_height"
+            />
+
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_height"
+            card_view:cardCornerRadius="@dimen/card_corner_radius"
+            card_view:cardElevation="@dimen/card_elevation"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            card_view:cardBackgroundColor= "@color/girish_crappy_gray"
+            android:padding="@dimen/card_padding"
+            android:onClick="iron_connector_click"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Iron Connector"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"/>
+        </android.support.v7.widget.CardView>
+
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_divider_height"
+            />
+
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_height"
+            card_view:cardCornerRadius="@dimen/card_corner_radius"
+
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            card_view:cardBackgroundColor="@color/girish_crappy_gray"
+            card_view:cardElevation="@dimen/card_elevation"
+            android:padding="@dimen/card_padding"
+            android:onClick="line_tester_click"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Line Tester"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"/>
+        </android.support.v7.widget.CardView>
+
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_divider_height"
+            />
+
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_height"
+            card_view:cardCornerRadius="@dimen/card_corner_radius"
+
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            card_view:cardBackgroundColor="@color/girish_crappy_gray"
+            card_view:cardElevation="@dimen/card_elevation"
+            android:padding="@dimen/card_padding"
+            android:onClick="insulation_tape_click"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Insulation Tape"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"/>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>

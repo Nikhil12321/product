@@ -58,9 +58,25 @@ public class Alternate extends AppCompatActivity {
         else if(product.equals("distribution_board")){
             product_list = dbHelper.getAllDistributionBoard();
         }
+        else if(product.equals("musical_bell")){
+            product_list = dbHelper.getAllMusicalBell();
+        }
+        else if(product.equals("conversion_plug")){
+            product_list = dbHelper.getAllConversionPlug();
+        }
+        else if(product.equals("gang_box")){
+            product_list = dbHelper.getAllIronConnector();
+        }
+        else if(product.equals("line_tester")){
+            product_list = dbHelper.getAllLineTester();
+        }
+        else if(product.equals("insulation_tap")){
+            product_list = dbHelper.getAllInsulationTape();
+        }
         else{
             product_list = dbHelper.getAllMultiPlug();
         }
+
 
         mShortAnimationDuration = getResources().getInteger(android.R.integer.config_shortAnimTime);
 

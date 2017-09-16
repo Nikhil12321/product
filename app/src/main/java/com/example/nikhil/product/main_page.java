@@ -74,6 +74,12 @@ public class main_page extends AppCompatActivity {
             dbHelper.initDatabaseMultiPlug();
             dbHelper.initDatabaseDistributionBoard();
             dbHelper.initDatabaseLED();
+            dbHelper.initDatabaseMusicalBell();
+            dbHelper.initDatabaseConversionPlug();
+            dbHelper.initDatabaseGangBox();
+            dbHelper.initDatabaseIronConnector();
+            dbHelper.initDatabaseLineTester();
+            dbHelper.initDatabaseInsulationTape();
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt("is_initialized", 1);
             editor.apply();
@@ -178,6 +184,7 @@ public class main_page extends AppCompatActivity {
                         Intent intent_led = new Intent(getActivity(), LED.class);
                         Intent intent_accessories = new Intent(getActivity(), Accessories_choice.class);
                         Intent intent_MCB = new Intent(getActivity(), MCB_choice.class);
+                        Intent intent_other_accessories = new Intent(getActivity(), OtherAccessoriesChoice.class);
 
                         //slideshow_image_View.setVisibility(View.GONE);
 
@@ -191,6 +198,8 @@ public class main_page extends AppCompatActivity {
                             case 4: startActivity(intent_MCB);
                                     break;
                             case 6: startActivity(intent_accessories);
+                                    break;
+                            case 7: startActivity(intent_other_accessories);
                                     break;
                         }
                         return true;
