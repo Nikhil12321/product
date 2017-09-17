@@ -498,7 +498,7 @@ public class DbHelper extends SQLiteOpenHelper {
         contentValues.put("image", image);
         try {
             Log.e("inside catch", "inserted values");
-            db.insert(VICTOR_TABLE, null, contentValues);
+            db.insert(VIJETA_TABLE, null, contentValues);
             return true;
         }
         catch (Exception e){
@@ -1022,6 +1022,103 @@ public class DbHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from "+MCB_TABLE, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+
+            String code = res.getString(res.getColumnIndex("code"));
+            String description = res.getString(res.getColumnIndex("description"));
+            int pkg = res.getInt(res.getColumnIndex("pkg"));
+            float mrp = res.getInt(res.getColumnIndex("mrp"));
+            int image = res.getInt(res.getColumnIndex("image"));
+
+            Properties product = new Properties(code, description, pkg, mrp, image);
+
+            array_list.add(product);
+            res.moveToNext();
+        }
+        res.close();
+        return array_list;
+    }
+
+    public ArrayList<Properties> getAllMiniGold() {
+        ArrayList<Properties> array_list = new ArrayList<Properties>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+MINI_GOLD_TABLE, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+
+            String code = res.getString(res.getColumnIndex("code"));
+            String description = res.getString(res.getColumnIndex("description"));
+            int pkg = res.getInt(res.getColumnIndex("pkg"));
+            float mrp = res.getInt(res.getColumnIndex("mrp"));
+            int image = res.getInt(res.getColumnIndex("image"));
+
+            Properties product = new Properties(code, description, pkg, mrp, image);
+
+            array_list.add(product);
+            res.moveToNext();
+        }
+        res.close();
+        return array_list;
+    }
+
+
+    public ArrayList<Properties> getAllVijeta() {
+        ArrayList<Properties> array_list = new ArrayList<Properties>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+VIJETA_TABLE, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+
+            String code = res.getString(res.getColumnIndex("code"));
+            String description = res.getString(res.getColumnIndex("description"));
+            int pkg = res.getInt(res.getColumnIndex("pkg"));
+            float mrp = res.getInt(res.getColumnIndex("mrp"));
+            int image = res.getInt(res.getColumnIndex("image"));
+
+            Properties product = new Properties(code, description, pkg, mrp, image);
+
+            array_list.add(product);
+            res.moveToNext();
+        }
+        res.close();
+        return array_list;
+    }
+
+    public ArrayList<Properties> getAllVictor() {
+        ArrayList<Properties> array_list = new ArrayList<Properties>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+VICTOR_TABLE, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+
+            String code = res.getString(res.getColumnIndex("code"));
+            String description = res.getString(res.getColumnIndex("description"));
+            int pkg = res.getInt(res.getColumnIndex("pkg"));
+            float mrp = res.getInt(res.getColumnIndex("mrp"));
+            int image = res.getInt(res.getColumnIndex("image"));
+
+            Properties product = new Properties(code, description, pkg, mrp, image);
+
+            array_list.add(product);
+            res.moveToNext();
+        }
+        res.close();
+        return array_list;
+    }
+
+    public ArrayList<Properties> getAllGracia() {
+        ArrayList<Properties> array_list = new ArrayList<Properties>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+GRACIA_TABLE, null );
         res.moveToFirst();
 
         while(res.isAfterLast() == false){

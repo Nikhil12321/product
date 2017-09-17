@@ -73,6 +73,24 @@ public class Alternate extends AppCompatActivity {
         else if(product.equals("insulation_tap")){
             product_list = dbHelper.getAllInsulationTape();
         }
+        else if(product.equals("wisdom")){
+            product_list = dbHelper.getAllWisdom();
+        }
+        else if(product.equals("mini_gold")){
+            product_list = dbHelper.getAllMiniGold();
+        }
+        else if(product.equals("vijeta")){
+            product_list = dbHelper.getAllVijeta();
+        }
+        else if(product.equals("victor")){
+            product_list = dbHelper.getAllVictor();
+        }
+        else if(product.equals("gracia")){
+            product_list = dbHelper.getAllGracia();
+        }
+        else if(product.equals("line_tester")){
+            product_list = dbHelper.getAllLineTester();
+        }
         else{
             product_list = dbHelper.getAllMultiPlug();
         }

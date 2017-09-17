@@ -80,6 +80,12 @@ public class main_page extends AppCompatActivity {
             dbHelper.initDatabaseIronConnector();
             dbHelper.initDatabaseLineTester();
             dbHelper.initDatabaseInsulationTape();
+            dbHelper.initDatabaseWisdom();
+            dbHelper.initDatabaseVijeta();
+            dbHelper.initDatabaseVictor();
+            dbHelper.initDatabaseGracia();
+            dbHelper.initDatabaseMiniGold();
+
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt("is_initialized", 1);
             editor.apply();
@@ -185,6 +191,7 @@ public class main_page extends AppCompatActivity {
                         Intent intent_accessories = new Intent(getActivity(), Accessories_choice.class);
                         Intent intent_MCB = new Intent(getActivity(), MCB_choice.class);
                         Intent intent_other_accessories = new Intent(getActivity(), OtherAccessoriesChoice.class);
+                        Intent intent_switches = new Intent(getActivity(), SwitchChoice.class);
 
                         //slideshow_image_View.setVisibility(View.GONE);
 
@@ -196,6 +203,8 @@ public class main_page extends AppCompatActivity {
                             case 2: startActivity(intent_led);
                                     break;
                             case 4: startActivity(intent_MCB);
+                                    break;
+                            case 5: startActivity(intent_switches);
                                     break;
                             case 6: startActivity(intent_accessories);
                                     break;
