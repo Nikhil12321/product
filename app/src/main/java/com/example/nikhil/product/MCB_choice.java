@@ -16,7 +16,7 @@ public class MCB_choice extends AppCompatActivity {
         setContentView(R.layout.activity_mcb_choice);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_mcb_choice);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Choose Product");
+        getSupportActionBar().setTitle("MCB");
 
 
     }

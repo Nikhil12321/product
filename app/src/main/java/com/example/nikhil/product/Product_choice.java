@@ -19,7 +19,7 @@ public class Product_choice extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Choose Product");
+        getSupportActionBar().setTitle("Modular");
 
     }
 

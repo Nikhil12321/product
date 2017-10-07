@@ -16,7 +16,7 @@ public class Accessories_choice extends AppCompatActivity {
         setContentView(R.layout.activity_accessories_choice);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_accessories_choice);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Choose Product");
+        getSupportActionBar().setTitle("Accessories");
 
 
     }

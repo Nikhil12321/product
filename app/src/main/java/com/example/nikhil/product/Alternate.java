@@ -91,6 +91,9 @@ public class Alternate extends AppCompatActivity {
         else if(product.equals("line_tester")){
             product_list = dbHelper.getAllLineTester();
         }
+        else if(product.equals("insulation_tape")){
+            product_list = dbHelper.getAllInsulationTape();
+        }
         else{
             product_list = dbHelper.getAllMultiPlug();
         }
