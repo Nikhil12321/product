@@ -25,7 +25,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/expanded_image"
-        android:visibility="invisible"/>
+        android:visibility="invisible"
+        android:padding="@dimen/card_padding"
+        />
 
 
 

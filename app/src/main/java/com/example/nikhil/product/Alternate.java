@@ -65,7 +65,7 @@ public class Alternate extends AppCompatActivity {
             product_list = dbHelper.getAllConversionPlug();
         }
         else if(product.equals("gang_box")){
-            product_list = dbHelper.getAllIronConnector();
+            product_list = dbHelper.getAllGangBox();
         }
         else if(product.equals("line_tester")){
             product_list = dbHelper.getAllLineTester();
@@ -93,6 +93,9 @@ public class Alternate extends AppCompatActivity {
         }
         else if(product.equals("insulation_tape")){
             product_list = dbHelper.getAllInsulationTape();
+        }
+        else if(product.equals("iron_connector")){
+            product_list = dbHelper.getAllIronConnector();
         }
         else{
             product_list = dbHelper.getAllMultiPlug();
@@ -147,8 +150,9 @@ public class Alternate extends AppCompatActivity {
 
         // Hide the thumbnail and show the zoomed-in view. When the animation begins,
         // it will position the zoomed-in view in the place of the thumbnail.
-        image.setAlpha(0f);
-        listView.setAlpha(0f);
+
+        listView.setVisibility(View.GONE);
+        findViewById(R.id.container).setBackgroundResource(R.color.md_white_1000);
         expanded_image_view.setVisibility(View.VISIBLE);
 
         // Set the pivot point for SCALE_X and SCALE_Y transformations to the top-left corner of
@@ -207,17 +211,18 @@ public class Alternate extends AppCompatActivity {
                 set.addListener(new AnimatorListenerAdapter() {
                     @Override
                     public void onAnimationEnd(Animator animation) {
-                        image.setAlpha(1f);
-                        listView.setAlpha(1f);
+                        findViewById(R.id.container).setBackgroundResource(R.color.girish_crappy_gray);
+                        listView.setVisibility(View.VISIBLE);
                         expanded_image_view.setVisibility(View.GONE);
                         mCurrentAnimator = null;
                     }
 
                     @Override
                     public void onAnimationCancel(Animator animation) {
-                        image.setAlpha(1f);
-                        listView.setAlpha(1f);
+                        findViewById(R.id.container).setBackgroundResource(R.color.girish_crappy_gray);
+                        listView.setVisibility(View.VISIBLE);
                         expanded_image_view.setVisibility(View.GONE);
+
                         mCurrentAnimator = null;
                     }
                 });
