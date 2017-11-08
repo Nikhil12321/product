@@ -13,6 +13,10 @@
     <color name="girish_secondary_color">#F58635</color>
     <color name="material_drawer_selected">#F58635</color>
     <color name="material_drawer_selected_text">#FFFF</color>
+
+    <color name="image_border_start">#FFFFFF</color>
+    <color name="image_border_end">#FFFFFF</color>
+    <color name="image_border_center">#FFFFFF</color>
     <!--<color name="girish_crappy_gray">#4A4A4A</color>-->
     <!--<color name="girish_crappy_gray">#5a5a5a</color>-->
     <!--<color name="girish_crappy_gray">#9e9e9e</color>-->

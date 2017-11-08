@@ -65,7 +65,7 @@ public class Alternate extends AppCompatActivity {
             product_list = dbHelper.getAllConversionPlug();
         }
         else if(product.equals("gang_box")){
-            product_list = dbHelper.getAllIronConnector();
+            product_list = dbHelper.getAllGangBox();
         }
         else if(product.equals("line_tester")){
             product_list = dbHelper.getAllLineTester();
@@ -93,6 +93,9 @@ public class Alternate extends AppCompatActivity {
         }
         else if(product.equals("insulation_tape")){
             product_list = dbHelper.getAllInsulationTape();
+        }
+        else if(product.equals("iron_connector")){
+            product_list = dbHelper.getAllIronConnector();
         }
         else{
             product_list = dbHelper.getAllMultiPlug();
@@ -139,16 +142,17 @@ public class Alternate extends AppCompatActivity {
         } else {
             // Extend start bounds vertically
             startScale = (float) startBounds.width() / finalBounds.width();
-            float startHeight = startScale * finalBounds.height();
+            float startHeight = startScale /* *finalBounds.height()*/;
             float deltaHeight = (startHeight - startBounds.height()) / 2;
-            startBounds.top -= deltaHeight;
-            startBounds.bottom += deltaHeight;
+/*            startBounds.top -= deltaHeight;
+            startBounds.bottom += deltaHeight;*/
         }
 
         // Hide the thumbnail and show the zoomed-in view. When the animation begins,
         // it will position the zoomed-in view in the place of the thumbnail.
-        image.setAlpha(0f);
-        listView.setAlpha(0f);
+
+        listView.setVisibility(View.GONE);
+
         expanded_image_view.setVisibility(View.VISIBLE);
 
         // Set the pivot point for SCALE_X and SCALE_Y transformations to the top-left corner of
@@ -207,17 +211,18 @@ public class Alternate extends AppCompatActivity {
                 set.addListener(new AnimatorListenerAdapter() {
                     @Override
                     public void onAnimationEnd(Animator animation) {
-                        image.setAlpha(1f);
-                        listView.setAlpha(1f);
+                        findViewById(R.id.container).setBackgroundResource(R.color.girish_crappy_gray);
+                        listView.setVisibility(View.VISIBLE);
                         expanded_image_view.setVisibility(View.GONE);
                         mCurrentAnimator = null;
                     }
 
                     @Override
                     public void onAnimationCancel(Animator animation) {
-                        image.setAlpha(1f);
-                        listView.setAlpha(1f);
+                        findViewById(R.id.container).setBackgroundResource(R.color.girish_crappy_gray);
+                        listView.setVisibility(View.VISIBLE);
                         expanded_image_view.setVisibility(View.GONE);
+
                         mCurrentAnimator = null;
                     }
                 });
@@ -226,6 +231,47 @@ public class Alternate extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.container).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mCurrentAnimator != null) {
+                    mCurrentAnimator.cancel();
+                }
+
+                // Animate the four positioning/sizing properties in parallel, back to their
+                // original values.
+                AnimatorSet set = new AnimatorSet();
+                set
+                        .play(ObjectAnimator.ofFloat(expanded_image_view, View.X, startBounds.left))
+                        .with(ObjectAnimator.ofFloat(expanded_image_view, View.Y, startBounds.top))
+                        .with(ObjectAnimator
+                                .ofFloat(expanded_image_view, View.SCALE_X, startScaleFinal))
+                        .with(ObjectAnimator
+                                .ofFloat(expanded_image_view, View.SCALE_Y, startScaleFinal));
+                set.setDuration(mShortAnimationDuration);
+                set.setInterpolator(new DecelerateInterpolator());
+                set.addListener(new AnimatorListenerAdapter() {
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                        findViewById(R.id.container).setBackgroundResource(R.color.girish_crappy_gray);
+                        listView.setVisibility(View.VISIBLE);
+                        expanded_image_view.setVisibility(View.GONE);
+                        mCurrentAnimator = null;
+                    }
+
+                    @Override
+                    public void onAnimationCancel(Animator animation) {
+                        findViewById(R.id.container).setBackgroundResource(R.color.girish_crappy_gray);
+                        listView.setVisibility(View.VISIBLE);
+                        expanded_image_view.setVisibility(View.GONE);
+
+                        mCurrentAnimator = null;
+                    }
+                });
+                set.start();
+                mCurrentAnimator = set;
+            }
+        });
 
     }
 }
