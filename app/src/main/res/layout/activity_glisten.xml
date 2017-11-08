@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +7,8 @@
     android:fitsSystemWindows="true"
     tools:context="com.example.nikhil.product.Glisten"
     android:background="@color/girish_crappy_gray"
-    android:id="@+id/container">
+    android:id="@+id/container"
+    android:orientation="vertical">
 
 
     <ListView
@@ -22,13 +23,16 @@
 
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/expanded_image"
         android:visibility="invisible"
-        android:padding="@dimen/card_padding"
+        android:paddingLeft="@dimen/image_view_padding"
+        android:paddingRight="@dimen/image_view_padding"
+        style="@style/myImageView"
         />
 
 
 
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>
