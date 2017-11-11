@@ -49,6 +49,14 @@ public class Accessories_choice extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    public void line_tester_click(View v){
+
+        Intent intent = new Intent(this, Alternate.class);
+        intent.putExtra("product", "line_tester");
+        startActivity(intent);
+    }
+
     public void dp_switch_click(View v){
 
         Intent intent = new Intent(this, Alternate.class);

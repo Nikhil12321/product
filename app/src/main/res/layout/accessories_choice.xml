@@ -176,6 +176,37 @@
             android:layout_height="@dimen/card_divider_height"
             />
 
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_height"
+            card_view:cardCornerRadius="@dimen/card_corner_radius"
+
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            card_view:cardBackgroundColor="@color/girish_crappy_gray"
+            card_view:cardElevation="@dimen/card_elevation"
+            android:padding="@dimen/card_padding"
+            android:onClick="line_tester_click"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Line Tester"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"/>
+        </android.support.v7.widget.CardView>
+
+
+        <View
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/card_divider_height"
+            />
 
         <android.support.v7.widget.CardView
             xmlns:card_view="http://schemas.android.com/apk/res-auto"

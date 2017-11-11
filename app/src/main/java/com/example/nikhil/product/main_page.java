@@ -85,7 +85,7 @@ public class main_page extends AppCompatActivity {
             dbHelper.initDatabaseVictor();
             dbHelper.initDatabaseGracia();
             dbHelper.initDatabaseMiniGold();
-
+            dbHelper.initDatabaseFan();
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt("is_initialized", 1);
             editor.apply();
@@ -192,6 +192,7 @@ public class main_page extends AppCompatActivity {
                         Intent intent_MCB = new Intent(getActivity(), MCB_choice.class);
                         Intent intent_other_accessories = new Intent(getActivity(), OtherAccessoriesChoice.class);
                         Intent intent_switches = new Intent(getActivity(), SwitchChoice.class);
+                        Intent intent_fan = new Intent(getActivity(), Fans.class);
 
                         //slideshow_image_View.setVisibility(View.GONE);
 
@@ -209,6 +210,8 @@ public class main_page extends AppCompatActivity {
                             case 6: startActivity(intent_accessories);
                                     break;
                             case 7: startActivity(intent_other_accessories);
+                                    break;
+                            case 8: startActivity(intent_fan);
                                     break;
                         }
                         return true;

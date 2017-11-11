@@ -55,6 +55,11 @@
             android:name=".SwitchChoice"
             android:label="@string/title_activity_switch_choice"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name=".Fans"
+            android:label="@string/title_activity_fans"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

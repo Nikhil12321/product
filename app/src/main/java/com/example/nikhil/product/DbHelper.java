@@ -43,6 +43,7 @@ public class DbHelper extends SQLiteOpenHelper {
     public static final String INSULATION_TAPE_TABLE = "insulationtape";
     public static final String FLEX_BOARD_POWER_STRIP = "flex_board_power_strip";
     public static final String HEATING_AND_PRESS_ELEMENT = "heating_and_press_element";
+    public static final String FAN_TABLE = "fan_table";
 
 
 
@@ -79,6 +80,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL("create table "+FLEX_BOARD_POWER_STRIP+" (code text, description text, pkg integer, mrp float, image integer);");
         db.execSQL("create table "+HEATING_AND_PRESS_ELEMENT+" (code text, description text, pkg integer, mrp float, image integer);");
         db.execSQL("create table "+LED_TABLE+" (description text, color integer, image integer);");
+        db.execSQL("create table "+FAN_TABLE+" (image integer, code text, mrp text, color text);");
 
     }
 
@@ -243,6 +245,27 @@ public class DbHelper extends SQLiteOpenHelper {
         try {
             Log.e("inside catch", "inserted values");
             db.insert(CEILING_ROSE_TABLE, null, contentValues);
+            return true;
+        }
+        catch (Exception e){
+            Log.e("inside catch", "did not commit");
+            return false;
+        }
+    }
+
+
+
+    public boolean insertIntoFan(int image, String code, String mrp, String color){
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("code", code);
+        contentValues.put("color", color);
+        contentValues.put("mrp", mrp);
+        contentValues.put("image", image);
+        try {
+            Log.e("inside catch", "inserted values");
+            db.insert(FAN_TABLE, null, contentValues);
             return true;
         }
         catch (Exception e){
@@ -1210,6 +1233,29 @@ public class DbHelper extends SQLiteOpenHelper {
         return array_list;
     }
 
+    public ArrayList<Fan_properties> getAllFan() {
+        ArrayList<Fan_properties> array_list = new ArrayList<Fan_properties>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+FAN_TABLE, null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+
+            String code = res.getString(res.getColumnIndex("code"));
+            String color = res.getString(res.getColumnIndex("color"));
+            String mrp = res.getString(res.getColumnIndex("mrp"));
+            int image = res.getInt(res.getColumnIndex("image"));
+
+            Fan_properties product = new Fan_properties(image, code, mrp, color);
+
+            array_list.add(product);
+            res.moveToNext();
+        }
+        res.close();
+        return array_list;
+    }
+
     public ArrayList<Properties> getAllGracia() {
         ArrayList<Properties> array_list = new ArrayList<Properties>();
 
@@ -1830,6 +1876,16 @@ public class DbHelper extends SQLiteOpenHelper {
         insertIntoLED("SLIM SIDE-LIT PANEL LIGHT", R.color.side_lit_color, R.drawable.slim_side_lit);
         insertIntoLED("SURFACE LIT PANEL LIGHT", R.color.surface_lit_color, R.drawable.surface_lit);
         insertIntoLED("24x24 SLIM SIDE-LIT PANEL LIGHT", R.color.side_lit_color, R.drawable.side_lit);
+
+    }
+
+    public void initDatabaseFan(){
+
+        insertIntoFan(R.drawable.fan_1, "9701 VW", "1625", "#ffffff");
+        insertIntoFan(R.drawable.fan_2, "9702 RK", "1950", "#6A1B9A");
+        insertIntoFan(R.drawable.fan_3, "9703 RK", "1950", "#6A1B9A");
+        insertIntoFan(R.drawable.fan_4, "9711 TW", "1415", "#5D4037");
+        insertIntoFan(R.drawable.fan_5, "9721 SC", "2050", "#795548");
 
     }
 

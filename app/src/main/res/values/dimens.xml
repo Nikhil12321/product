@@ -20,4 +20,7 @@
     <dimen name="new_led_heading_text_size">40sp</dimen>
     <dimen name="new_text_inside_box_padding">20dp</dimen>
     <dimen name="image_view_padding">20dp</dimen>
+    <dimen name="fan_color_strip_height">20dp</dimen>
+    <dimen name="fan_color_strip_width">200dp</dimen>
+    <dimen name="fan_margin_left">20dp</dimen>
 </resources>
