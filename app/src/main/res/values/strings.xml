@@ -8,4 +8,5 @@
     <string name="title_activity_other_accessories_choice">OtherAccessoriesChoice</string>
     <string name="title_activity_switch_choice">SwitchChoice</string>
     <string name="title_activity_fans">Fans</string>
+    <string name="title_activity_wire">Wire</string>
 </resources>

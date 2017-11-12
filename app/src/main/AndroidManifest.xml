@@ -51,6 +51,11 @@
             android:name=".OtherAccessoriesChoice"
             android:label="@string/title_activity_other_accessories_choice"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name=".Wire"
+            android:label="@string/title_activity_wire"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".SwitchChoice"
             android:label="@string/title_activity_switch_choice"

@@ -96,7 +96,11 @@ public class main_page extends AppCompatActivity {
         repeatTask = new Timer();
         primary_list_view = (ListView)findViewById(R.id.main_page_list_view);
         setUpNavigationBar(toolbar);
-        final int[] slideshow_pictures = {R.drawable.slide1, R.drawable.slide2, R.drawable.slide3};
+        final int[] slideshow_pictures = {R.drawable.slide7, R.drawable.slide6,
+                                            R.drawable.slide5, R.drawable.slide1,
+                                            R.drawable.slide4, R.drawable.slide8,
+                                            R.drawable.slide2, R.drawable.slide3};
+
 
         startSlideshow(slideshow_pictures);
     }
@@ -116,7 +120,7 @@ public class main_page extends AppCompatActivity {
                         @Override
                         public void run() {
                             slideshow_image_View.setImageResource(slideshow_pictures[i]);
-                            i = (i + 1) % 3;
+                            i = (i + 1) % 8;
 
                         }
                     });
@@ -193,6 +197,7 @@ public class main_page extends AppCompatActivity {
                         Intent intent_other_accessories = new Intent(getActivity(), OtherAccessoriesChoice.class);
                         Intent intent_switches = new Intent(getActivity(), SwitchChoice.class);
                         Intent intent_fan = new Intent(getActivity(), Fans.class);
+                        Intent intent_wire = new Intent(getActivity(), Wire.class);
 
                         //slideshow_image_View.setVisibility(View.GONE);
 
@@ -202,6 +207,8 @@ public class main_page extends AppCompatActivity {
                                     result.closeDrawer();
                                     break;
                             case 2: startActivity(intent_led);
+                                    break;
+                            case 3: startActivity(intent_wire);
                                     break;
                             case 4: startActivity(intent_MCB);
                                     break;

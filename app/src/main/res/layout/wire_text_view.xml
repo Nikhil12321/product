@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <TextView
+        android:padding="@dimen/text_inside_box_padding"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:layout_margin="1dp"
+        android:text="Code No."
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_gravity="center"
+        android:layout_weight="0.20"
+        android:id="@+id/wire_spec_table_code_textview"
+        />
+
+    <TextView
+        android:padding="@dimen/text_inside_box_padding"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:layout_margin="1dp"
+        android:text="Code No."
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_gravity="center"
+        android:layout_weight="0.20"
+        android:id="@+id/wire_spec_table_area_textview"
+            />
+    <TextView
+        android:padding="@dimen/text_inside_box_padding"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:layout_margin="1dp"
+        android:text="Code No."
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_gravity="center"
+        android:layout_weight="0.20"
+        android:id="@+id/wire_spec_table_diameter_textview"
+            />
+
+    <TextView
+        android:padding="@dimen/text_inside_box_padding"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:layout_margin="1dp"
+        android:text="Code No."
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_gravity="center"
+        android:layout_weight="0.20"
+        android:id="@+id/wire_spec_table_mrp_textview"
+            />
+
+</LinearLayout>
